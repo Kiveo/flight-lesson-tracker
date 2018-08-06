@@ -18,7 +18,7 @@ Relationships:
 
 2.Create Routes and Controllers
 <!-- --create controller files -->
--routes 
+-routes and basic links (home, login, sign up, logout, stu/instruct, lessons)
 --Student controller and Instructor controller should allow for CRUD
 --lesson controller
 
