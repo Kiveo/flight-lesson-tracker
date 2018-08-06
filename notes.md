@@ -17,6 +17,8 @@ Relationships:
 <!-- --create associations between models -->
 
 2.Create Routes and Controllers
+<!-- --create controller files -->
+-routes 
 --Student controller and Instructor controller should allow for CRUD
 --lesson controller
 
