@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FlightLessonTracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>FlightLessonTracker</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><%= link_to 'Flight Lesson Tracker', root_url %></li>
+          <li><%= link_to 'Log In', new_session_path %></li>
+          <li></li>
+          <li></li>
+        </ul>  
+    </header>
+    <div class="wrapper">
+    
+      <%= yield %>
 
-<%= yield %>
+    </div>
 
-</body>
+  </body>
 </html>
