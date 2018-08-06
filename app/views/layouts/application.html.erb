@@ -15,7 +15,7 @@
         <li><%= link_to 'Instructor Sign Up', new_instructor_path %></li>
         <li><%= link_to 'Log In', '/login' %></li>
         <li><%= link_to 'Lessons', lessons_path %></li>
-        <li><%= link_to 'Log Out', '/logout' %></li>
+        <li><%= link_to "Log Out", '/logout', method: "delete" %></li>
         </ul>  
     </header>
     <div class="wrapper">

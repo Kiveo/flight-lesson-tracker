@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :lessons
   
   get '/login', to: "sessions#new"
-  post '/logout', to: "sessions#delete"
+  delete '/logout', to: "sessions#delete"
 
   # resources :sessions, only: [:new, :create, :delete]
   # Example of regular route:
