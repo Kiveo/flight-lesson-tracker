@@ -21,12 +21,14 @@ Relationships:
 -routes and basic links (home, login, sign up, logout, stu/instruct, lessons)
 --Student controller and Instructor controller should allow for CRUD
 --lesson controller
+!!!ONLY INSTRUCTORS SHOULD SIGNUP/LOGIN!!!
+!!!APP is designed for employee use and possibly student reference. Students are not intended to alter data!
 
 3. Basic layout and views
 
 4. Allow for sessions concerning log in and log out .
   --create session controller
-  --permissions? (student vs instructor?)
+  --permissions? (viewer vs instructor?)
 
 5.
 

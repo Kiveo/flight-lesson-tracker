@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :students, only: [:new, :create]
+  resources :students #students are edited by instructors, not the students themselves.
   resources :instructors
   resources :lessons
   
   get '/login', to: "sessions#new"
-
+  post '/logout', to: "sessions#delete"
 
   # resources :sessions, only: [:new, :create, :delete]
   # Example of regular route:
