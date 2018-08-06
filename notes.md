@@ -13,13 +13,17 @@ Relationships:
 
 1.
 <!-- --Create migrations and tables for the models.    -->
---Create models
---create associations between models
+<!-- --Create models -->
+<!-- --create associations between models -->
 
 2.Create Routes and Controllers
+--Student controller and Instructor controller should allow for CRUD
+--lesson controller
 
-3.
+3. Basic layout and views
 
-4.
+4. Allow for sessions concerning log in and log out .
+  --create session controller
+  --permissions? (student vs instructor?)
 
 5.
