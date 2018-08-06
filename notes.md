@@ -2,9 +2,11 @@ Dev Notes
 OVERVIEW: Flight lesson tracker should be able to allow instructors to plan flight lessons with students.
 
 Models: Instructor, Lesson, Student
-  a. Instructors have: Name, CFI number  --(#currency? #rating? maybe add later)
-  b. Lessons have: Instructor(id), Student(id), When(datetime?) --(#aircraft)
-  c. Students have: Name --(can add more later#)
+a. Instructors have: Name, CFI number  --(#currency? #rating? maybe add later)
+b. Lessons have: Instructor(id), Student(id), When(datetime?) --(#aircraft)
+--lessons should be about something...description.
+c. Students have: Name --(can add more later#)
+--Students and instructors should have passwords .
 
 Relationships:
   a. Instructors have many students through lessons, and have many lessons
