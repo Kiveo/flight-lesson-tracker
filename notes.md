@@ -7,9 +7,9 @@ Models: Instructor, Lesson, Student
   <!-- c. Students have: Name --(can add more later#) -->
 
 Relationships:
-  a. Instructors have many students through lessons, and have many lessons
+  <!-- a. Instructors have many students through lessons, and have many lessons
   b. Students have many instructors through lessons, and have many lessons
-  c. Lessons belong to both instructors and students
+  c. Lessons belong to both instructors and students -->
 
 1.
 <!-- --Create migrations and tables for the models.    -->
@@ -29,3 +29,7 @@ Relationships:
   --permissions? (student vs instructor?)
 
 5.
+
+
+*Extra Features: These are possible features to be added later.
+-Instrcutor sign up code to add verification to sign up.
