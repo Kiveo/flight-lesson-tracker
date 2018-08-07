@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   def new
   end 
   
-  def create
-    instructor = Instructor.find_by(email: params[:session][:email].downcase)
-    if instructor && instructor.authenticate(params[:session][:password])
+  def create #instructors will likely have a unique FAA CFI number 
+    instructor = Instructor.find_by(cfi: params[:instructor][:cfi])
+    if instructor && instructor.authenticate(params[:instructor][:password])
       log_in instructor
       redirect_to instructor
     else
@@ -21,13 +21,12 @@ class SessionsController < ApplicationController
   
   private 
 
-  def log_in(user)
-    session[:user_id] = user.id
+  def log_in(instructor)
+    session[:user_id] = instructor.id
   end
 
   def log_out
     session.delete(:user_id)
     @current_user = nil
   end
-  
 end 

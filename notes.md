@@ -23,6 +23,8 @@ Relationships:
 --lesson controller
 !!!ONLY INSTRUCTORS SHOULD SIGNUP/LOGIN!!!
 !!!APP is designed for employee use and possibly student reference. Students are not intended to alter data!
+:Currently, there is no User, only instructors, whom once logged in are in the session[:user_id] as such. 
+-Change to ALL instructor references? lower confusion?
 
 3. Basic layout and views
 
