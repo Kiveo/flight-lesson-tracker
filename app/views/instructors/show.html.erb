@@ -1,10 +1,10 @@
 <h1><%= @instructor.name %>'s Display</h1>
 
-<%= if flash[:notice] %>
-  <%= flash[:notice] %>
+<% if flash[:notice] %>
+  <p class='important'><%= flash[:notice] %></p>
 <% end %>
 
 <div>
-  <p>Registered Name:<%= @instructor.name %></p>
+  <p>Registered Name: <%= @instructor.name %></p>
   <p>CFI Number: <%= @instructor.cfi %></p>
 </div>

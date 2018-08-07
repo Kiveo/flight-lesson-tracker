@@ -14,16 +14,18 @@ class InstructorsController < ApplicationController
 
   def create
     @instructor = Instructor.new(instructor_params)
-    if @instructor.save && @instructor.authenticate(params[:password])
+    if @instructor.save
       flash[:notice] = 'Instructor successfully registered'
-      redirect_to @instructor
-    else 
+      session[:user_id] = @instructor.id 
+      redirect_to @instructor 
+    else
       flash[:alert] = @instructor.errors.full_messages.join(", ")
       redirect_to new_instructor_path
     end 
   end 
 
   def show
+    @instructor = Instructor.find_by_id(session[:user_id])
   end 
 
   def edit
