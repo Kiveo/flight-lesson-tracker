@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     instructor = Instructor.find_by(cfi: params[:session][:cfi])
     if instructor && instructor.authenticate(params[:session][:password])
       log_in instructor
+      flash[:notice] = "Successfully Logged In."
       redirect_to instructor
     else
       flash.now[:danger] = 'Invalid email/password combination'

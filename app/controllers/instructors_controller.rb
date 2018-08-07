@@ -25,7 +25,11 @@ class InstructorsController < ApplicationController
   end 
 
   def show
-    @instructor = Instructor.find_by_id(session[:user_id])
+    if logged_in?
+      @instructor = Instructor.find_by_id(session[:user_id])
+    else 
+      redirect_to root_url
+    end 
   end 
 
   def edit
