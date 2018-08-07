@@ -112,5 +112,12 @@ p.important {
 /* Error Display */
 
 .field_with_errors {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  background-color: #6699EE;
   border: 1px solid red;
+  color: red;
+  font-size: 1.2em;
 }
