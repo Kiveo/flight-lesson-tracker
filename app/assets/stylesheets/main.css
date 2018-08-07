@@ -109,3 +109,8 @@ p.important {
   color: #222;
 }
 
+/* Error Display */
+
+.field_with_errors {
+  border: 1px solid red;
+}

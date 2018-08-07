@@ -1,5 +1,9 @@
 <h1>Instructor Sign Up</h1>
 
-<p class="important">Important: FAA CFI number will be used for login.</p>
+<% if flash[:notice] %>
+  <div class='field_with_errors'><%= flash[:notice] %></div>
+<% else %>
+  <p class="important">Important: FAA CFI number will be used for login.</p>
+<% end %>
 
 <%= render partial: 'form', locals: {instructor: @instructor} %>

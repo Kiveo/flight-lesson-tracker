@@ -13,13 +13,13 @@ class InstructorsController < ApplicationController
   end 
 
   def create
-    @instructor.new(instructor_params)
+    @instructor = Instructor.new(instructor_params)
     if @instructor.save && @instructor.authenticate(params[:password])
       flash[:notice] = 'Instructor successfully registered'
-      redirecto_to root_url
+      redirect_to @instructor
     else 
       flash[:notice] = @instructor.errors.full_messages
-      redirecto_to new_instructor_path
+      redirect_to new_instructor_path
     end 
   end 
 

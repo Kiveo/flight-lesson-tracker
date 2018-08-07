@@ -17,6 +17,8 @@ Relationships:
 <!-- --create associations between models -->
 
 <!-- --Drop passwords from students, they're not users! -->
+--Validations
+--validates :author, presence: true EXAMPLE FOR lessons model
 
 2.Create Routes and Controllers
 <!-- --create controller files -->
