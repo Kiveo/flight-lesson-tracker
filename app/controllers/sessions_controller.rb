@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   end 
   
   def create #instructors will likely have a unique FAA CFI number 
-    instructor = Instructor.find_by(cfi: params[:instructor][:cfi])
-    if instructor && instructor.authenticate(params[:instructor][:password])
+    instructor = Instructor.find_by(cfi: params[:session][:cfi])
+    if instructor && instructor.authenticate(params[:session][:password])
       log_in instructor
       redirect_to instructor
     else
