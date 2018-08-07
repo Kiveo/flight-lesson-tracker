@@ -11,6 +11,11 @@ html, body {
   color: white;
 }
 
+div.container {
+  position: relative;
+  min-height: 100%;
+}
+
 a,a:visited {
   text-decoration: none;
 }
@@ -48,12 +53,11 @@ nav ul li a:hover::before {
   color: white;
 }
 nav ul li a:hover::after {
-  color: #0AE;
+  color: #037;
 }
 
 .wrapper {
   margin: 0 auto;
-  /* padding-top: 1em; */
   max-width: 960px;
   text-align: center;
   background-color: #00689E;
@@ -66,4 +70,5 @@ h1, h2, h3 {
   padding: 1em 0;
   color: #0066B4;
 }
+
 

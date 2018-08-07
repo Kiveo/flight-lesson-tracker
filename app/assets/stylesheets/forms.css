@@ -48,11 +48,6 @@ input:focus {
   width: 100%;
 }
 .form-submit:hover {
-  background-color: green;
+  background-color: #08a;
   border: 1px solid white;
-}
-
-.form-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: 1; /* Firefox */
 }
