@@ -6,12 +6,11 @@ class Instructor < ActiveRecord::Base
 
   validates :name, presence: true
   validates :cfi, presence: true
-  validates :cfi,   numericality: {only_integer: true}
-  validates :cfi, length: {minimum: 1}
+  validates :cfi, numericality: {greater_than: 1}
+  validates :cfi, numericality: {only_integer: true}
   validates :cfi, uniqueness: true 
   validates :password, presence: true
-  validates :password, length {minimum: 1}
-
+  validates :password, length: { minimum: 2}
 
 
   def students_scheduled
