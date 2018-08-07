@@ -21,6 +21,17 @@ a,a:visited {
   color: white;
 }
 
+.wrapper a {
+  background-color: #037;
+  padding: 1em 2em;
+  border-radius: 10px;
+}
+
+.wrapper a:hover {
+  background-color: #08a;
+  border-radius: 10px;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -75,7 +86,6 @@ h1, h2, h3 {
 }
 
 p {
-  /* word-spacing: 0.1em; */
   font-size: 1.2em;
   padding: 1em;
 }
