@@ -1,0 +1,9 @@
+<h1>Edit Profile</h1>
+
+<% if flash[:alert] %>
+  <%= flash_message(flash[:alert]) %>
+<% else %> 
+  <%= important_paragraph %>
+<% end %>
+
+<%= render partial: 'form', locals: {instructor: @instructor} %>
