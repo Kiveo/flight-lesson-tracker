@@ -13,7 +13,6 @@ html, body {
 
 a,a:visited {
   text-decoration: none;
-  color: white;
 }
 
 nav ul {
@@ -24,20 +23,37 @@ nav ul {
 }
 
 nav ul li {
-  display: inline;
-  /* margin: 0; */
-  /* padding: 0; */
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-  display: inline-block;
-  background-color: #008080;
+  display: block;
   padding: 1em;
   margin: 0;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  background-color: #037;
+}
+nav ul li a::before, nav ul li a::after {
+  content: "> ";
+  color: #00689E;
+}
+nav ul li a:hover::before {
+  content: "> ";
+  color: white;
+}
+nav ul li a:hover::after {
+  color: #0AE;
 }
 
 .wrapper {
   margin: 0 auto;
+  /* padding-top: 1em; */
   max-width: 960px;
   text-align: center;
   background-color: #00689E;

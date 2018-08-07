@@ -9,13 +9,13 @@
   <body>
     <header>
       <nav>
-        <ul>   
-          <li><%= link_to 'Flight Lesson Tracker', root_url %></li>
-          <li><%= link_to 'Student List', students_path %></li>
-          <li><%= link_to 'Instructor Sign Up', new_instructor_path %></li>
-          <li><%= link_to 'Log In', '/login' %></li>
-          <li><%= link_to 'Lessons', lessons_path %></li>
-          <li><%= link_to "Log Out", '/logout', method: "delete" %></li>
+        <ul>
+          <li><%= link_to 'Flight Lesson Tracker', root_url %></li><li>
+          <%= link_to 'Student List', students_path %></li><li>
+          <%= link_to 'Instructor Sign Up', new_instructor_path %></li><li>
+          <%= link_to 'Log In', '/login' %></li><li>
+          <%= link_to 'Lessons', lessons_path %></li><li>
+          <%= link_to "Log Out", '/logout', method: "delete" %></li>
         </ul>  
     </header>
     <div class="wrapper">
