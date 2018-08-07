@@ -18,7 +18,7 @@ class InstructorsController < ApplicationController
       flash[:notice] = 'Instructor successfully registered'
       redirect_to @instructor
     else 
-      flash[:notice] = @instructor.errors.full_messages
+      flash[:alert] = @instructor.errors.full_messages.join(", ")
       redirect_to new_instructor_path
     end 
   end 
