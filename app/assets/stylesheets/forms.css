@@ -35,7 +35,7 @@ input:focus {
 }
 
 .form-submit {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   border: 0;
@@ -47,6 +47,7 @@ input:focus {
   padding: 0.5em 0.5em;
   width: 100%;
 }
+
 .form-submit:hover {
   background-color: #08a;
   border: 1px solid white;

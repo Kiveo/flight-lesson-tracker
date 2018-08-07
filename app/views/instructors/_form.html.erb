@@ -3,6 +3,9 @@
     <%= f.label 'Name' %>
     <%= f.text_field :name, class: 'form-field', required: true %>
     
+    <%= f.label 'Password' %>
+    <%= f.password_field :password, class: 'form-field', required: true %>
+
     <%= f.label "Certified Flight Instructor Number" %>
     <%= f.number_field :cfi, class: 'form-field', min: 1, required: true %>
 
