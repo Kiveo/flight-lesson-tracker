@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# create students
+students_seed = Student.create([{ name: 'Alpha' }, { name: 'Bravo' }, {name: 'Charley'}])
+# create some instructors
+instructors_seed = Instructor.create([
+  {name: 'Instructor 1', cfi: 00123, password: 'password1'}, 
+  {name: 'Instructor 2', cfi: 00234, password: 'password2'},
+  {name: 'Instructor 3', cfi: 00345, password: 'password3'}
+])

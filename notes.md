@@ -15,6 +15,7 @@ Relationships:
 <!-- --Create migrations and tables for the models.    -->
 <!-- --Create models -->
 <!-- --create associations between models -->
+--Drop passwords from students, they're not users!
 
 2.Create Routes and Controllers
 <!-- --create controller files -->
