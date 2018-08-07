@@ -5,18 +5,33 @@ form {
   position: relative;
   background-color: #3F8EDD;
   margin: 0 auto;
-  padding: 0.5em 0;
+  padding: 2em 0 0 0;
   min-height: 300px;
 }
 
-.form-field {
-  display: block;
-  background-color: #4ea0f4;
-  margin: 1em auto;
-  padding: 0.5em;
-  text-align: center;
-  color: #eff;
+label {
+  color: whitesmoke;
+  text-transform: capitalize;
   font-weight: bold;
+}
+
+.form-field {
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  border: 0;
+  border-left: 3px solid teal;
+  border: 3px solid #cef;
+  background-color: #6eb0f4;
+  margin: 1em auto;
+  padding: 1em 0.5em;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+input:focus {
+  background-color: #69e;
 }
 
 .form-submit {
@@ -24,27 +39,20 @@ form {
   bottom: 0;
   left: 0;
   border: 0;
-  background-color: #2EE940;
+  background-color:teal;
   color: #fff;
   font-size: 1em;
+  font-weight: bold;
   margin: 0 auto;
   padding: 0.5em 0.5em;
   width: 100%;
 }
 .form-submit:hover {
-  background-color: teal;
-  border: 1px solid black;
+  background-color: green;
+  border: 1px solid white;
 }
 
 .form-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
+  color: white;
   opacity: 1; /* Firefox */
-}
-
-.form-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: red;
-}
-
-.form-field::-ms-input-placeholder { /* Microsoft Edge */
-  color: red;
 }

@@ -1,10 +1,11 @@
-# form partial for instructor
+<div class="form-div">
+  <%= form_for(@instructor) do |f| %>
+    <%= f.label 'Name' %>
+    <%= f.text_field :name, class: 'form-field', required: true %>
+    
+    <%= f.label "Certified Flight Instructor Number" %>
+    <%= f.number_field :cfi, class: 'form-field', min: 1, required: true %>
 
-<%= form_for(@instructor) do |f| %>
-  <%= f.label 'Name: ' %>
-  <%= f.text_field :name, class: 'form-field', placeholder: 'Name' %>
-  
-  <%= f.text_field :cfi, class: 'form-field', placeholder: 'CFI Number' %>
-
-  <%= f.submit 'Create Instructor', class: 'form-submit' %>
-<% end %>
+    <%= f.submit 'Create Instructor', class: 'form-submit text-field' %>
+  <% end %>
+</div>

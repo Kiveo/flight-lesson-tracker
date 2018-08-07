@@ -1,12 +1,52 @@
 /* CSS for layout and main views  */
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-body {
+html, body {
   font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #00689E;
+  color: white;
+}
+
+a,a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  /* border: 1px solid black;  */
+}
+
+nav ul li a {
+  /* display: inline-block; */
+  padding: 0;
+  margin: 0;
 }
 
 .wrapper {
   margin: 0 auto;
   max-width: 960px;
   text-align: center;
+  background-color: #00689E;
+}
+
+h2 {
+  text-transform: capitalize;
+  background-color: white;
+  margin: 0 auto;
+  padding: 1em 0;
+  color: #0066B4;
 }
