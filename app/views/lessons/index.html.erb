@@ -1,1 +1,9 @@
 <h1>Lesson Index</h1>
+
+<ul>
+<%= @lessons.each do |lesson| %>
+  <li>Lesson Student: <%= lesson.student.name %></li>
+  <li>Lesson Instructor: <%= lesson.instructor.name %></li>
+  <li>Lesson Description: <%= lesson.description %></li>
+<% end %>
+</ul>
