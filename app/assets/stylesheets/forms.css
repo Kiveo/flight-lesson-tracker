@@ -1,0 +1,50 @@
+/* CSS for forms and partials */
+
+
+form {
+  position: relative;
+  background-color: #3F8EDD;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  min-height: 300px;
+}
+
+.form-field {
+  display: block;
+  background-color: #4ea0f4;
+  margin: 1em auto;
+  padding: 0.5em;
+  text-align: center;
+  color: #eff;
+  font-weight: bold;
+}
+
+.form-submit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 0;
+  background-color: #2EE940;
+  color: #fff;
+  font-size: 1em;
+  margin: 0 auto;
+  padding: 0.5em 0.5em;
+  width: 100%;
+}
+.form-submit:hover {
+  background-color: teal;
+  border: 1px solid black;
+}
+
+.form-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+.form-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+.form-field::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+}
