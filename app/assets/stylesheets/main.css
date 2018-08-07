@@ -59,7 +59,7 @@ nav ul li a:hover::after {
   background-color: #00689E;
 }
 
-h2 {
+h1, h2, h3 {
   text-transform: capitalize;
   background-color: white;
   margin: 0 auto;
