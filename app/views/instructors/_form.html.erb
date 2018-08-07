@@ -1,0 +1,11 @@
+# form partial for instructor
+
+<%= form_for(@instructor) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-field' %>
+  
+  <%= f.label :cfi %>
+  <%= f.text_field :cfi, class: 'form-field' %>
+
+  <%= f.submit 'Create Instructor', class: 'form-submit' %>
+<% end %>
