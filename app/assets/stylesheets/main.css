@@ -24,15 +24,15 @@ nav ul {
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0;
-  padding: 1em;
-  /* border: 1px solid black;  */
+  display: inline;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
 nav ul li a {
-  /* display: inline-block; */
-  padding: 0;
+  display: inline-block;
+  background-color: #008080;
+  padding: 1em;
   margin: 0;
 }
 
@@ -50,3 +50,4 @@ h2 {
   padding: 1em 0;
   color: #0066B4;
 }
+

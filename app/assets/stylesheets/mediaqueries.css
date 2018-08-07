@@ -5,4 +5,8 @@
     display: block;
   }
 
+  nav ul li a {
+    display: block;
+    border-bottom: 1px solid white;
+  }
 }
