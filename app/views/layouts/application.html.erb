@@ -14,7 +14,9 @@
           <li><%= link_to 'Flight Lesson Tracker', root_url %></li><li>
           <%= link_to 'Instructor List', instructors_path %></li><li>
           <%= link_to 'Lessons', lessons_path %></li><li>
-          <%= link_to "Log Out", '/logout', method: "delete" %></li>
+          <% if logged_in? %>
+            <%= link_to "Log Out", '/logout', method: "delete" %></li>
+          <% end %>
         </ul>  
     </header>
     <div class="wrapper">

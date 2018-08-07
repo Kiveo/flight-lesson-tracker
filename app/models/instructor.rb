@@ -6,7 +6,7 @@ class Instructor < ActiveRecord::Base
 
 
   def students_scheduled
-    self.lessons.students.count
+    self.lessons.size
   end
   
 end 

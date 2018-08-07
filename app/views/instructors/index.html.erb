@@ -1,13 +1,13 @@
 <h1>Instructors Index</h2>
 
+<% @instructors.each do |instructor| %>
 <ul>
 
-  <% @instructors.each do |instructor| %>
     <li>Instructor Name: <%= instructor.name %></li>
 
     <li>FAA CFI Number: <%= instructor.cfi %></li>
 
-    <li>Total Students Scheduled:<%= instructor.students_scheduled %></li>
-  <% end %>
-  
-</ul>
+    <li>Total Students Scheduled: <%= instructor.students_scheduled %></li>
+    
+    </ul>
+    <% end %>
