@@ -1,0 +1,8 @@
+<% if logged_in? %>
+  <h1>Welcome, <%= current_user.name %></h1>
+  <div>
+    <%= link_to 'Need to Edit your Profile?', current_user %>
+  </div>
+<% else %>
+  <h1>Welcome page!</h1>
+<% end %>
