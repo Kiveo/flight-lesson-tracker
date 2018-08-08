@@ -62,6 +62,7 @@ class LessonsController < ApplicationController
       else 
         flash[:notice] = "Failed to delete."
         redirect_to root_url 
+      end 
     else 
       redirect_to '/login'
     end
