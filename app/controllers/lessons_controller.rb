@@ -25,8 +25,9 @@ class LessonsController < ApplicationController
   end 
 
   def update
-    @lesson = Lesson.new(lesson_params)
-    if @lesson.save
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
+      # raise params.inspect
       flash[:notice] = "Successfully updated lesson."
       redirect_to lesson_path(@lesson)
     else 
@@ -41,7 +42,7 @@ class LessonsController < ApplicationController
   private 
 
   def lesson_params
-    params.require(:lesson).permit(:description, :instructor_id, :student_id)
+    params.require(:lesson).permit(:description, :instructor_id, :student_id, :lesson_datetime )
   end 
 
 end

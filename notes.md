@@ -20,6 +20,10 @@ Relationships:
 --Validations
 --validates :author, presence: true EXAMPLE FOR lessons model
 
+<div class="datetime-div">
+      <%= datetime_select(@lesson, :lesson_datetime) %>
+    <div>?
+
 2.Create Routes and Controllers
 <!-- --create controller files -->
 -routes and basic links (home, login, sign up, logout, stu/instruct, lessons)
