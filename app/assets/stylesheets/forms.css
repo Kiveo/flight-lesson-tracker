@@ -34,6 +34,23 @@ input:focus {
   background-color: #69e;
 }
 
+select {
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  border: 3px solid #cef;
+  background-color: #6eb0f4;
+  margin: 1em auto;
+  padding: 1em 0.5em;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+textarea {
+  font-size: 1.2em;
+}
+
 .form-submit {
   position: relative;
   bottom: 0;

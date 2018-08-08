@@ -14,6 +14,9 @@ class LessonsController < ApplicationController
   end 
 
   def edit
+    @lesson = Lesson.find(params[:id])
+    @students = Student.all 
+    @instructors = Instructor.all 
   end 
 
   def update 
