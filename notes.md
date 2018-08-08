@@ -17,12 +17,14 @@ Relationships:
 <!-- --create associations between models -->
 
 <!-- --Drop passwords from students, they're not users! -->
---Validations
---validates :author, presence: true EXAMPLE FOR lessons model
+<!-- --validates :author, presence: true EXAMPLE FOR lessons model -->
+Students should be created by instructors.
 
-<div class="datetime-div">
-      <%= datetime_select(@lesson, :lesson_datetime) %>
-    <div>?
+Create report model and have it belong to instructors.
+-Title -Flight_hours -Ground_hours 
+--nest within instructor RESTFUL routes 
+-validations for reports
+-restrict based upon individual instructor. (optional, but ideal)
 
 2.Create Routes and Controllers
 <!-- --create controller files -->
