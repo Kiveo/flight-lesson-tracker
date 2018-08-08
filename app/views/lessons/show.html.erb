@@ -1,5 +1,11 @@
 <h1>Lesson Display</h1>
 
+<% if flash[:notice] %>
+  <p class='important'><%= flash[:notice] %></p>
+<% else %>
+  <p class='important'>If this is not you, please log out.</p>
+<% end %>
+
 <p>
   Student:<br> <%= @lesson.student.name %>
 </p>
@@ -11,5 +17,5 @@
 </p>
 
 <p>
-  Debriefing: <%= @lesson.lesson_datetime %>
+  Lesson Date and Time: <%= @lesson.lesson_datetime %>
 </p>

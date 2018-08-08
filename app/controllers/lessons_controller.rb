@@ -31,8 +31,8 @@ class LessonsController < ApplicationController
       flash[:notice] = "Successfully updated lesson."
       redirect_to lesson_path(@lesson)
     else 
-      flash[:alert] = "Invalid Data, please try again."
-      render lesson_edit_path(@lesson)
+      flash[:alert] = @lesson.errors.full_messages
+      redirect_to edit_lesson_path
     end  
   end 
 

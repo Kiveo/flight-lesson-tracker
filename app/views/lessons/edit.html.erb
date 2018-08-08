@@ -19,8 +19,9 @@
     <%= f.text_area :description, class: 'form-field' %>
     
     <%= f.label 'Lesson Time' %>
-    <%= f.datetime_field :lesson_datetime %> 
+    <%= f.datetime_field :lesson_datetime, ampm: true %> 
     
+    <p>Example: 2018-12-30 25:30</p>
     <%= f.submit 'Update Lesson', class: 'form-submit text-field' %>
   <% end %>
 </div>
