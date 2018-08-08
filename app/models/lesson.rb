@@ -9,4 +9,6 @@ class Lesson < ActiveRecord::Base
   validates :description, presence: true 
   validates :lesson_datetime, presence: true 
 
+  accepts_nested_attributes_for :student, reject_if: :all_blank
+
 end

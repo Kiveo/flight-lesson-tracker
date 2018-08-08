@@ -10,10 +10,10 @@
     <%= f.label 'Lesson Description' %>
     <%= f.text_area :description, class: 'form-field' %>
     
+    <p>Time Format: 2018-12-30 25:30 Zulu</p>
+
     <%= f.label 'Lesson Time' %>
     <%= f.datetime_field :lesson_datetime, ampm: true %> 
-    
-    <p>Example: 2018-12-30 25:30</p>
     
     <%= f.submit submit_name, class: 'form-submit text-field' %>
   <% end %>

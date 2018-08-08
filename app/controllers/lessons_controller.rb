@@ -5,6 +5,13 @@ class LessonsController < ApplicationController
   end 
 
   def new
+    if !logged_in?
+      redirect_to '/login'
+    else 
+      @lesson = Lesson.new 
+      @students = Student.all 
+      @instructors = Instructor.all 
+    end  
   end 
 
   def create
