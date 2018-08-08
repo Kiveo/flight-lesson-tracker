@@ -3,7 +3,7 @@
 <% if flash[:alert] %>
   <%= flash_message(flash[:alert]) %>
 <% else %> 
-  <%= important_paragraph %>
+<p class='important'><%= important_paragraph %></p>
 <% end %>
 
 <%= render partial: 'form', locals: {instructor: @instructor} %>

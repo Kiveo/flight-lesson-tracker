@@ -39,7 +39,15 @@ class InstructorsController < ApplicationController
     end  
   end 
 
-  def update 
+  def update
+    @instructor = Instructor.find_by_id(session[:user_id])
+    if @instructor.update(instructor_params)
+      flash[:notice] = "Successfully updated profile" 
+      redirect_to root_url 
+    else 
+      flash[:alert] = @instructor.errors.full_messages
+      redirect_to edit_instructor_path
+    end 
   end 
 
   def delete

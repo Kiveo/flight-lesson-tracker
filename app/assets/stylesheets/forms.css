@@ -69,3 +69,8 @@ textarea {
   background-color: #08a;
   border: 1px solid white;
 }
+
+.datetime-div select {
+  display: inline-block;
+  max-width: 100px;
+}

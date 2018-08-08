@@ -5,7 +5,7 @@ module InstructorsHelper
   end
 
   def important_paragraph
-    "<p class='important'>Important: FAA CFI number will be used for login.</p>"  
+    "Important: FAA CFI number will be used for login."  
   end 
 
 end
