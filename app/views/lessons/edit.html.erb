@@ -6,22 +6,4 @@
   <p class="important">Note: Appointment's should be written 2018-12-30 24:00 Zulu Format</p>
 <% end %>
 
-<div class="form-div">
-  <%= form_for(@lesson) do |f| %>
-    
-    <%= f.label 'Student ID' %>
-    <%= collection_select(:lesson, :student_id, @students, :id, :name, prompt: true) %>
-    
-    <%= f.label 'Select Instructor' %> 
-    <%= collection_select(:lesson, :instructor_id, @instructors, :id, :name, prompt: true) %>
-
-    <%= f.label 'Lesson Description' %>
-    <%= f.text_area :description, class: 'form-field' %>
-    
-    <%= f.label 'Lesson Time' %>
-    <%= f.datetime_field :lesson_datetime, ampm: true %> 
-    
-    <p>Example: 2018-12-30 25:30</p>
-    <%= f.submit 'Update Lesson', class: 'form-submit text-field' %>
-  <% end %>
-</div>
+  <%= render partial: 'form', locals: {lesson: @lesson, submit_name: 'Update Lesson'} %>
