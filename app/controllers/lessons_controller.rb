@@ -15,6 +15,16 @@ class LessonsController < ApplicationController
   end 
 
   def create
+    # raise params.inspect
+    @lesson = Lesson.new(lesson_params)
+    if @lesson.save
+      # raise params.inspect
+      flash[:notice] = "Successfully created lesson."
+      redirect_to lesson_path(@lesson)
+    else 
+      flash[:alert] = @lesson.errors.full_messages
+      redirect_to new_lesson_path
+    end  
   end 
 
   def show
