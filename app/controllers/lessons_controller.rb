@@ -54,6 +54,17 @@ class LessonsController < ApplicationController
   end 
 
   def delete
+    if logged_in?
+      @lesson = Lesson.find(params[:id])
+      if @lesson.destroy
+        flash[:notice] = "Lesson Deleted"
+        redirect root_url 
+      else 
+        flash[:notice] = "Failed to delete."
+        redirect_to root_url 
+    else 
+      redirect_to '/login'
+    end
   end 
   
   private 
