@@ -6,8 +6,13 @@
     <%= f.label 'Password' %>
     <%= f.password_field :password, class: 'form-field', required: true %>
 
-    <%= f.label "Certified Flight Instructor Number" %>
-    <%= f.number_field :cfi, class: 'form-field', min: 1, required: true %>
+    <% if session[:githubber] == true %>
+      <p>GitHub users will display their CFI as their github User ID.</p>
+      <p>If you would like to reference your actual CFI, edit your name field</p> 
+    <% else %>
+      <%= f.label "Certified Flight Instructor Number" %>
+      <%= f.number_field :cfi, class: 'form-field', min: 1, required: true %>
+    <% end %>
 
     <%= f.submit submit_name, class: 'form-submit text-field' %>
   <% end %>

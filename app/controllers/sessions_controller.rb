@@ -10,9 +10,11 @@ class SessionsController < ApplicationController
       oauth_cfi = auth_hash[:uid]
       if @instructor = Instructor.find_by(cfi: oauth_cfi)
         login_sequence
+        session[:githubber] = true
       else 
-        @instructor = Instructor.create(name: oauth_name, password: SecureRandom.hex, cfi: oauth_cfi)
+        @instructor = Instructor.create(name: oauth_name, password: SecureRandom.hex, cfi: oauth_cfi, )
         login_sequence
+        session[:githubber] = true
       end  
     else #normal login  
       @instructor = Instructor.find_by(cfi: params[:session][:cfi])
@@ -37,7 +39,8 @@ class SessionsController < ApplicationController
   end
 
   def log_out
-    session.delete(:user_id)
+    #clear user_id and github print
+    session.clear
   end
 
   def login_sequence
