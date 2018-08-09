@@ -1,11 +1,10 @@
 <div class="form-div">
   <%= form_for(:session) do |f| %>
-    
-    <p>
+    <%= link_to 'Login via GitHub', '/auth/github' %>
+    <p>    
       <%= f.label "Certified Flight Instructor Number" %>
       <%= f.number_field :cfi, class: 'form-field', min: 1, required: true %>
     </p>
-    
     <p>
       <%= f.label 'Password' %>
       <%= f.password_field :password, class: 'form-field', required: true %>
