@@ -46,12 +46,23 @@ class ReportsController < ApplicationController
   end
 
   def edit
+    @instructor = Instructor.find_by_id(params[:instructor_id])
+    @report = @instructor.reports.find(params[:id])
     if !current_user.reports.detect{|report| report == @report }
         flash[:notice] = "Can not view reports that are not yours."
     end 
   end
 
   def update
+    @instructor = Instructor.find_by_id(current_user)
+    @report = @instructor.reports.find(params[:id])
+    if @report.update(report_params)
+      flash[:notice] = "Report successfully updated"
+      redirect_to instructor_reports_path(@instructor)
+    else 
+      flash[:alert] = @report.errors_full_messages.join(", ")
+      redirect_to edit_instructor_report_path(@instructor, @report) 
+    end 
   end 
 
   def destroy

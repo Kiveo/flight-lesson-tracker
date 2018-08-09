@@ -4,10 +4,10 @@
     <%= f.text_field :title, class: 'form-field', required: true %>
     
     <%= f.label 'Ground Hours: ' %>
-    <%= f.number_field :ground_hours, class: 'form-field', required: true %>
+    <%= f.number_field :ground_hours, class: 'form-field', min: 0, required: true %>
 
     <%= f.label 'Flight Hours: ' %>
-    <%= f.number_field :flight_hours, class: 'form-field', required: true %>
+    <%= f.number_field :flight_hours, class: 'form-field', min: 0, required: true %>
 
     <%= f.submit submit_name, class: 'form-submit text-field' %>
   <% end %>

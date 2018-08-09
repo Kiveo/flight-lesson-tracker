@@ -1,1 +1,9 @@
 <h1>Update Report</h1>
+
+<% if flash[:alert] %>
+  <div class='field_with_errors'><%= flash[:alert] %></div>
+<% else %>
+  <p class="important">Important: Reports will be checked against admin logs.</p>
+<% end %>
+
+<%= render partial: 'form', locals: {instructor: @instructor, report: @report, submit_name: 'Update Report'} %>

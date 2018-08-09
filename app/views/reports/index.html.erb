@@ -6,7 +6,7 @@
     <li>Instructor: <%= report.instructor.name %></li>
     <li>Flight Hours: <%= report.flight_hours %></li>
     <li>Ground Hours: <%= report.ground_hours %></li>
-    <li><%= link_to 'View/Edit Report', instructor_report_path(report.instructor, report) %></li>
+    <li><p><%= link_to 'View/Edit Report', instructor_report_path(report.instructor, report) %></p></li>
   </ul>
 <% end %>
 <br id="bottom-spacer">
