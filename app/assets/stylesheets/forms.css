@@ -74,3 +74,7 @@ textarea {
   display: inline-block;
   max-width: 100px;
 }
+
+#filter-form {
+  min-height: 150px;
+}
