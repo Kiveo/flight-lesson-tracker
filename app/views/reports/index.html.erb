@@ -1,13 +1,13 @@
 <h1>Report Index</h1>
 <p class="important">Order by filter selection</p>
 
-<%= form_tag("/reports", method: "get", id: "filter-form") do %>
+<%= form_tag("/instructors/#{@instructor.id}/reports", method: "get", id: "filter-form") do %>
     <%= label_tag 'Filter Reports' %>
-    <%= select_tag "hour_type", options_for_select(["Flight", "Ground"]), include_blank: true %>
+    <%= select_tag "hour_type", options_for_select(["Flight", "Ground", "Recently Created", "Recently Updated"]), include_blank: true %>
     <%= submit_tag "Filter" %>
 <% end %>
 
-<% @reports.most_flight_hours.each do |report| %>
+<% @reports.each do |report| %>
   <ul>
     <li>Title: <%= report.title %></li>
     <li>Instructor: <%= report.instructor.name %></li>

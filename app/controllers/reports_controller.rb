@@ -2,7 +2,20 @@ class ReportsController < ApplicationController
   
   def index
     if logged_in?
-      @reports = Instructor.find(current_user).reports
+      @instructor = Instructor.find(current_user)
+      if !params[:hour_type].blank?
+        if params[:hour_type] == "Flight"
+          @reports = @instructor.reports.most_flight_hours
+        elsif params[:hour_type] == "Ground"
+          @reports = @instructor.reports.most_ground_hours
+        elsif params[:hour_type] == "Recently Created" 
+          @reports = @instructor.reports.recent
+        else 
+          @reports = @instructor.reports.recently_updated
+        end
+      else # Default
+        @reports = Instructor.find(current_user).reports
+      end
     else
       redirect_to '/login'
     end

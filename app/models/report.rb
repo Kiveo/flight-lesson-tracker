@@ -10,5 +10,8 @@ class Report < ActiveRecord::Base
   validates :ground_hours, numericality: true
   
   scope :most_flight_hours, -> { order("reports.flight_hours DESC")}
+  scope :most_ground_hours, -> { order("reports.ground_hours DESC")}
 
+  scope :recent, -> { order("reports.created_at DESC")}
+  scope :recently_updated, -> { order("reports.updated_at DESC")}
 end
