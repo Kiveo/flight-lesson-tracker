@@ -19,6 +19,15 @@ class ReportsController < ApplicationController
   end 
  
   def create
+    @instructor = instructor.find(params[:instructor_id])
+    @report = @instructor.reports.build(params[:report])
+    if @report.save
+      flash[:notice] = "Report successfully generated"
+      redirect_to instructor_report_path
+    else 
+      flash[:alert] = @report.errors_full_messages.join(", ")
+      redirect_to edit_instructor_report_path 
+    end 
   end
 
   def show

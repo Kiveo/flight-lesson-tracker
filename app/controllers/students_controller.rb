@@ -42,7 +42,7 @@ class StudentsController < ApplicationController
       flash[:notice] = "Successfully updated student" 
       redirect_to student_path(@student) 
     else 
-      flash[:alert] = @student.errors.full_messages
+      flash[:alert] = @student.errors.full_messages.join(", ")
       redirect_to edit_student_path
     end 
   end 

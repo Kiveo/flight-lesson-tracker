@@ -48,7 +48,7 @@ class LessonsController < ApplicationController
       flash[:notice] = "Successfully updated lesson."
       redirect_to lesson_path(@lesson)
     else 
-      flash[:alert] = @lesson.errors.full_messages
+      flash[:alert] = @lesson.errors.full_messages.join(", ")
       redirect_to edit_lesson_path
     end  
   end 
@@ -60,7 +60,7 @@ class LessonsController < ApplicationController
         flash[:notice] = "Lesson Deleted"
         redirect root_url 
       else 
-        flash[:notice] = "Failed to delete."
+        flash[:alert] = "Failed to delete."
         redirect_to root_url 
       end 
     else 
