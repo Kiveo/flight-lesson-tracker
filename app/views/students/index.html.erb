@@ -1,1 +1,10 @@
-<h1>Student Index</h1>
+<h1>Students Index</h2>
+
+<% @students.each do |student| %>
+  <ul>
+    <li>Student Name: <%= student.name %></li>
+
+    <li>Student Number: <%= student.student_id %></li>
+  </ul>
+<% end %>
+    

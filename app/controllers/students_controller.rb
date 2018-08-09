@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   
   def index
+    @students = Student.all 
   end 
 
   def new
@@ -24,10 +25,15 @@ class StudentsController < ApplicationController
   end 
 
   def show
-    @student = Student.find(params[:id])
+    find_student
   end 
 
   def edit
+    if logged_in?
+      find_student
+    else 
+      redirect_to '/login'
+    end 
   end 
 
   def update 
@@ -49,4 +55,8 @@ class StudentsController < ApplicationController
     params.require(:student).permit(:name, :student_id)
   end 
   
+  def find_student
+    @student = Student.find(params[:id])
+  end 
+
 end 
