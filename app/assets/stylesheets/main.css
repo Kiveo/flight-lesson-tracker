@@ -88,6 +88,16 @@ nav ul li a:hover::after {
   letter-spacing: 0.1em; 
 }
 
+.wrapper ul li p {
+  font-size: 1em;
+  padding: 0.5em;
+  margin: 1em 0 0 0;
+}
+
+.wrapper ul li p a {
+  padding: 0.5em 2em;
+}
+
 h1, h2, h3 {
   text-transform: capitalize;
   background-color: white;
