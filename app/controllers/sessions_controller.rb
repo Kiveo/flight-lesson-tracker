@@ -9,19 +9,15 @@ class SessionsController < ApplicationController
       oauth_name = auth_hash[:info][:name]
       oauth_cfi = auth_hash[:uid]
       if @instructor = Instructor.find_by(cfi: oauth_cfi)
-        log_in @instructor
-        flash[:notice] = "Welcome Back!"
-        # raise params.inspect
-        redirect_to instructor_path(@instructor)
+        login_sequence
       else 
         @instructor = Instructor.create(name: oauth_name, password: SecureRandom.hex, cfi: oauth_cfi)
+        login_sequence
       end  
     else #normal login  
-      instructor = Instructor.find_by(cfi: params[:session][:cfi])
-      if instructor && instructor.authenticate(params[:session][:password])
-        log_in instructor
-        flash[:notice] = "Successfully Logged In."
-        redirect_to instructor
+      @instructor = Instructor.find_by(cfi: params[:session][:cfi])
+      if @instructor && @instructor.authenticate(params[:session][:password])
+        login_sequence
       else
         flash.now[:alert] = 'Invalid email/password combination'
         render 'new'
@@ -44,9 +40,10 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
   end
 
-
-  # def auth_hash
-  #   request.env['omniauth.auth']
-  # end
+  def login_sequence
+    log_in @instructor
+    flash[:notice] = "Successfully Logged In."
+    redirect_to instructor_path(@instructor)
+  end 
 
 end 
