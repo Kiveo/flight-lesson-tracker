@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <p><%= link_to 'View Profile', instructor_path(current_user) %></p>
+  <p><%= link_to 'Dashboard', instructor_path(current_user) %></p>
   <p><%= link_to 'Edit Profile', edit_instructor_path(current_user) %></p>
   <p><%= link_to 'Unregister/Delete Profile', current_user, method: :delete, data: {confirm: "Unregister?"} %></p>
   <br id="bottom-spacer"> 
