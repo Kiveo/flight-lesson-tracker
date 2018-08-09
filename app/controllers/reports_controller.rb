@@ -1,5 +1,14 @@
 class ReportsController < ApplicationController
 
+  
+  def index
+    if logged_in?
+      @reports = Instructor.find(current_user.id).reports
+    else
+      redirect_to '/login'
+    end
+  end
+
   def new
     if logged_in?
      @report = Report.new
@@ -7,5 +16,13 @@ class ReportsController < ApplicationController
       redirect_to '/login'
     end 
   end 
-  
+ 
+  def show
+    if logged_in?
+      @report = report.find(params[:id])
+    else 
+      redirect_to '/login'
+    end
+  end
+
 end

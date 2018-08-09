@@ -1,0 +1,14 @@
+<div class="form-div">
+  <%= form_for(@report) do |f| %>
+    <%= f.label 'title' %>
+    <%= f.text_field :title, class: 'form-field', required: true %>
+    
+    <%= f.label 'Ground Hours: ' %>
+    <%= f.flight_hours_field :ground_hours, class: 'form-field', required: true %>
+
+    <%= f.label 'Flight Hours: ' %>
+    <%= f.number_field :flight_hours, class: 'form-field', required: true %>
+
+    <%= f.submit submit_title, class: 'form-submit text-field' %>
+  <% end %>
+</div>

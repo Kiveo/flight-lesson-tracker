@@ -1,0 +1,7 @@
+<% @reports.each do |report| %>
+  <p>Title: <%= report.title %></p>
+  <p>Instructor: <%= link_to report.instructor.name, instructor_reports_path(report.instructor) %></p>
+  
+  <p>Flight Hours: <%= report.flight_hours %></p>
+  <p>Ground Hours: <%= report.ground_hours %></p>
+<% end %>
