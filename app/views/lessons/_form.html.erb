@@ -11,7 +11,11 @@
     <%= f.text_area :description, class: 'form-field' %>
     
     <span style="color: #ccc">Appointment Example: 12 December 2018 21:30 Zulu</span>
-    <p>Current App Time: <%= lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></p>
+    <% if lesson.lesson_datetime%>
+      <p>Current App Time: <%= lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></p>
+    <% else %>
+      <p>Lesson scheduling must be unique across all lessons.</p>
+    <% end %>
     <%= f.label 'Lesson Time' %>
     <%= f.datetime_field :lesson_datetime, ampm: true %> 
     

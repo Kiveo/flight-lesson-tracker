@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :students
-  resources :lessons
+  resources :lessons, except: :destroy
   resources :instructors do 
     resources :reports 
   end 
