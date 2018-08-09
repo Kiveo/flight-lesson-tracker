@@ -1,12 +1,13 @@
 <div class="form-div">
   <%= form_for(@student) do |f| %>
     <p>
-    <%= f.label 'Student Name' %>
+      <%= f.label 'Student Name' %>
+      <%= f.text_field :name, class: 'form-field', required: true %>
     </p>
     <p>
-    <%= f.text_field :name, class: 'form-field', required: true %>
+      <%= f.label "Student's Administration ID" %>
+      <%= f.number_field :student_id, class: 'form-field', min: 1 %>
     </p>
-    <br>
     <%= f.submit submit_name, class: 'form-submit text-field' %>
   <% end %>
 </div>

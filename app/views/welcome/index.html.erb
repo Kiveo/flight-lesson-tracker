@@ -1,2 +1,7 @@
 <h1><%= greeting_options(current_user) %></h1> 
+
+<% if flash[:notice] %>
+  <p class='important'><%= flash[:notice] %></p>
+<% end %>
+
 <%= render partial: 'current_user_links', locals: {current_user: current_user} %>

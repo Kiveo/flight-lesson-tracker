@@ -1,0 +1,20 @@
+<h1><%= @student.name %>'s Display</h1>
+
+<% if flash[:notice] %>
+  <p class='important'><%= flash[:notice] %></p>
+<% else %>
+  <p class='important'>Student Number may change once an FAA License is acquired.</p>
+<% end %>
+
+<div>
+  Student Name: <%= @student.name %>
+  <br>
+  Student Number: <%= @student.student_id %>
+</div>
+<ul>
+<li><p><%= link_to 'View All Students', students_path %></p></li>
+  <li><p><%= link_to 'Edit Student', edit_student_path %></p></li>
+  <li><p><%= link_to "Delete", @student, method: :delete, data: { confirm: "Really?" } %></p></li>
+</ul>
+<br id="bottom-spacer">
+
