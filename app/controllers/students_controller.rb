@@ -34,4 +34,10 @@ class StudentsController < ApplicationController
   def delete
   end 
   
+  private 
+
+  def student_params
+    params.require(:student).permit(:name)
+  end 
+  
 end 

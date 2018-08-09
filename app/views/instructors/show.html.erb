@@ -8,10 +8,12 @@
 
 <div>
   Registered Name: <%= @instructor.name %>
-  <br>CFI Number: <%= @instructor.cfi %>
+  <br>
+  CFI Number: <%= @instructor.cfi %>
 </div>
 
 <p><%= link_to 'Add Lesson', new_lesson_path %></p>
-
 <p><%= link_to 'Register Student', new_student_path %></p>
+
+<br id="bottom-spacer">
 
