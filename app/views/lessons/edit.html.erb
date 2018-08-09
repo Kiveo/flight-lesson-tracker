@@ -3,7 +3,7 @@
 <% if flash[:alert] %>
   <div class='field_with_errors'><%= flash[:alert] %></div>
 <% else %>
-  <p class="important">Note: Appointment's should be written 2018-12-30 24:00 Zulu Format</p>
+  <p class="important">Note: Appointment's should be written as date and Zulu time</p>
 <% end %>
 
   <%= render partial: 'form', locals: {lesson: @lesson, submit_name: 'Update Lesson'} %>
