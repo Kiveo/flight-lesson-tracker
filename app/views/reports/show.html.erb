@@ -1,0 +1,20 @@
+<h1><%= @report.title %>: Report Display</h1>
+
+<% if flash[:notice] %>
+  <p class='important'><%= flash[:notice] %></p>
+<% else %>
+  <p class='important'>Report hours will be confirmed by administration.</p>
+<% end %>
+
+<div>
+  Title: <%= @report.title %>
+  <br>
+  Flight Hours: <%= @report.flight_hours %>
+</div>
+<ul>
+  <li><p><%= link_to 'View All Reports', reports_path %></p></li>
+  <li><p><%= link_to 'Edit Report', edit_report_path %></p></li>
+  <li><p><%= link_to "Delete", @report, method: :delete, data: { confirm: "Really?" } %></p></li>
+</ul>
+<br id="bottom-spacer">
+

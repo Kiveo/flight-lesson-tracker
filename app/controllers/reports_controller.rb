@@ -26,4 +26,14 @@ class ReportsController < ApplicationController
     end
   end
 
+  def destroy
+    if logged_in?
+      Report.find(params[:id]).destroy
+      flash[:notice] = "Report successfully removed."
+      redirect_to instructor_path(current_user)
+    else 
+      redirect_to '/login'
+    end  
+  end
+
 end
