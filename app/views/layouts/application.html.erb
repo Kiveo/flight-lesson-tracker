@@ -16,6 +16,7 @@
           <%= link_to 'Lessons', lessons_path %></li><li>
           <%= link_to 'Students', students_path %></li><li>
           <% if logged_in? %>
+            <%= link_to 'Profile', instructor_path(current_user) %></li><li>
             <%= link_to "Log Out", '/logout', method: "delete" %></li>
           <% else %>
             </li>

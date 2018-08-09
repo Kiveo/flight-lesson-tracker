@@ -26,21 +26,21 @@ class InstructorsController < ApplicationController
 
   def show
     if logged_in?
-      @instructor = Instructor.find_by_id(session[:user_id])
+      find_instructor
     else 
       redirect_to root_url
     end 
   end 
 
   def edit
-    @instructor = Instructor.find_by_id(session[:user_id])
+    find_instructor
     if !logged_in?
       redirect_to root_url
     end  
   end 
 
   def update
-    @instructor = Instructor.find_by_id(session[:user_id])
+    find_instructor
     if @instructor.update(instructor_params)
       flash[:notice] = "Successfully updated profile" 
       redirect_to root_url 
@@ -50,14 +50,15 @@ class InstructorsController < ApplicationController
     end 
   end 
 
-  def delete
-  end 
-
   private 
 
   def instructor_params
     params.require(:instructor).permit(:name, :cfi, :password)
   end 
 
+  def find_instructor
+    @instructor = Instructor.find_by_id(session[:user_id])
+  end 
+  
 end 
 
