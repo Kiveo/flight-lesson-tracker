@@ -11,7 +11,8 @@ class ReportsController < ApplicationController
 
   def new
     if logged_in?
-     @report = Report.new
+     @instructor = Instructor.find(current_user.id)
+     @report = @instructor.reports.build
     else 
       redirect_to '/login'
     end 
