@@ -15,7 +15,6 @@ class StudentsController < ApplicationController
         flash[:notice] = "Successfully registered student"
         redirect_to student_path(@student)
       else
-        # raise params.inspect 
         flash[:alert] = @student.errors.full_messages.join(", ")
         redirect_to new_student_path
       end

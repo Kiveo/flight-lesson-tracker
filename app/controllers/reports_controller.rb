@@ -19,7 +19,6 @@ class ReportsController < ApplicationController
   end 
  
   def create
-    # raise params.inspect
     @instructor = Instructor.find_by_id(params[:instructor_id])
     @report = @instructor.reports.build(report_params)
     if @report.save
@@ -32,7 +31,6 @@ class ReportsController < ApplicationController
   end
 
   def show
-    # raise params.inspect
     if logged_in? 
       @instructor = Instructor.find(params[:instructor_id])
       @report = @instructor.reports.find(params[:id])

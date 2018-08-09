@@ -15,10 +15,8 @@ class LessonsController < ApplicationController
   end 
 
   def create
-    # raise params.inspect
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
-      # raise params.inspect
       flash[:notice] = "Successfully created lesson."
       redirect_to lesson_path(@lesson)
     else 
@@ -44,7 +42,6 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      # raise params.inspect
       flash[:notice] = "Successfully updated lesson."
       redirect_to lesson_path(@lesson)
     else 

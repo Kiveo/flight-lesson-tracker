@@ -78,9 +78,6 @@ nav ul li a:hover::after {
 }
 
 .wrapper ul {
-  /* display: flex;
-  flex-direction: column; */
-  /* display: block; */
   list-style-type: none;
   padding: 0em 0.1em 1em 0.1em;
   font-size: 1em;
