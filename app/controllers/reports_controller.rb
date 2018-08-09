@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
   
   def index
     if logged_in?
-      @reports = Instructor.find(current_user.id).reports
+      @reports = Instructor.find_by(params[:instructor_id]).reports
     else
       redirect_to '/login'
     end
