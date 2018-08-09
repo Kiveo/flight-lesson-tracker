@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#delete"
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/github/callback', to: 'sessions#create'
+  # get '/auth/:provider/callback', :to => 'sessions#create'
+  # get 'http://localhost:3000/auth/github/callback', to: 'sessions#create'
 
   # resources :sessions, only: [:new, :create, :delete]
  

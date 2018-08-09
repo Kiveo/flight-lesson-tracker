@@ -6,10 +6,16 @@ class SessionsController < ApplicationController
   def create  
     #omniauth login
     if auth_hash = request.env["omniauth.auth"] 
-      @instructor = Instructor.find_or_create_from_auth_hash(auth_hash)
-      log_in @instructor
-      flash[:notice] = "Welcome Back!"
-      redirect_to instructor
+      oauth_name = auth_hash[:info][:name]
+      oauth_cfi = auth_hash[:uid]
+      if @instructor = Instructor.find_by(cfi: oauth_cfi)
+        log_in @instructor
+        flash[:notice] = "Welcome Back!"
+        # raise params.inspect
+        redirect_to instructor_path(@instructor)
+      else 
+        @instructor = Instructor.create(name: oauth_name, password: SecureRandom.hex, cfi: oauth_cfi)
+      end  
     else #normal login  
       instructor = Instructor.find_by(cfi: params[:session][:cfi])
       if instructor && instructor.authenticate(params[:session][:password])
@@ -38,10 +44,9 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
   end
 
-  protected
 
-  def auth_hash
-    request.env['omniauth.auth']
-  end
+  # def auth_hash
+  #   request.env['omniauth.auth']
+  # end
 
 end 
