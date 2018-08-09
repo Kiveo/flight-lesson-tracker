@@ -9,4 +9,6 @@ class Report < ActiveRecord::Base
   validates :ground_hours, presence: true 
   validates :ground_hours, numericality: true
   
+  scope :most_flight_hours, -> { order("reports.flight_hours DESC")}
+
 end

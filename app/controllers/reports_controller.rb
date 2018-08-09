@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-
   
   def index
     if logged_in?

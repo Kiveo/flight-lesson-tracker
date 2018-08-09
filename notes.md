@@ -18,31 +18,36 @@ Relationships:
 
 <!-- --Drop passwords from students, they're not users! -->
 <!-- --validates :author, presence: true EXAMPLE FOR lessons model -->
-Students should be created by instructors.
+<!-- Students should be created by instructors. -->
 
 <!-- Create report model and have it belong to instructors. -->
 <!-- -Title -Flight_hours -Ground_hours  -->
 <!-- --nest within instructor RESTFUL routes  -->
---views should be routed as nested
+<!-- --views should be routed as nested -->
 <!-- -validations for reports -->
--restrict based upon individual instructor. (optional, but ideal)
+<!-- -restrict based upon individual instructor. (optional, but ideal) -->
 
-2.Create Routes and Controllers
+<!-- 2.Create Routes and Controllers -->
 <!-- --create controller files -->
--routes and basic links (home, login, sign up, logout, stu/instruct, lessons)
---Student controller and Instructor controller should allow for CRUD ops
+<!-- -routes and basic links (home, login, sign up, logout, stu/instruct, lessons) -->
+<!-- --Student controller and Instructor controller should allow for CRUD ops -->
 <!-- --lesson controller -->
 <!-- !!!ONLY INSTRUCTORS SHOULD SIGNUP/LOGIN!!! -->
 <!-- !!!APP is designed for employee use and possibly student reference. Students are not intended to alter data!
 :Currently, there is no User, only instructors, whom once logged in are in the session[:user_id] as such.  -->
 
-3. Basic layout and views
+<!-- 3. Basic layout and views -->
 
-4. Allow for sessions concerning log in and log out .
-  --create session controller
-  --permissions? (viewer vs instructor?)
+<!-- 4. Allow for sessions concerning log in and log out . -->
+  <!-- --create session controller -->
+  <!-- --permissions? (reports per instructor?) -->
 
-5.
+5. Project Requirements
+- add spec file
+
+--implement OAuth
+
+-review project requirements
 
 
 *Extra Features: These are possible features to be added later.

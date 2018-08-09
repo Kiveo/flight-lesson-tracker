@@ -1,6 +1,7 @@
 <h1>Report Index</h1>
+<p class="important">Ordered by highest flight hours</p>
 
-<% @reports.each do |report| %>
+<% @reports.most_flight_hours.each do |report| %>
   <ul>
     <li>Title: <%= report.title %></li>
     <li>Instructor: <%= report.instructor.name %></li>
@@ -9,4 +10,5 @@
     <li><p><%= link_to 'View/Edit Report', instructor_report_path(report.instructor, report) %></p></li>
   </ul>
 <% end %>
+
 <br id="bottom-spacer">

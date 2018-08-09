@@ -13,7 +13,6 @@ class Instructor < ActiveRecord::Base
   validates :password, presence: true
   validates :password, length: { minimum: 2}
 
-
   def students_scheduled
     self.lessons.size
   end

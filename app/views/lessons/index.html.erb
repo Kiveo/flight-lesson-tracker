@@ -1,11 +1,14 @@
 <h1>Lesson Index</h1>
 
-<% @lessons.each do |lesson| %>
+<p class="important">Sorted by most recent date:time</p>
+
+<% @lessons.recent.each do |lesson| %>
   
   <ul>
     <li>Lesson Student: <%= lesson.student.name %></li>
     <li>Lesson Instructor: <%= lesson.instructor.name %></li>
     <li>Scheduled: <%= lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></li>
+    <li><p><%= link_to 'View Description', lesson_path(lesson) %></p></li>
     <% if logged_in? %>  
      <li><p><%=link_to 'Edit Lesson?', edit_lesson_path(lesson) %></p></li>
     <% end %>
