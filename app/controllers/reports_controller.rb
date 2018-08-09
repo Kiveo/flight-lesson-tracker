@@ -19,20 +19,23 @@ class ReportsController < ApplicationController
   end 
  
   def create
-    @instructor = instructor.find(params[:instructor_id])
-    @report = @instructor.reports.build(params[:report])
+    # raise params.inspect
+    @instructor = Instructor.find_by_id(params[:instructor_id])
+    @report = @instructor.reports.build(report_params)
     if @report.save
       flash[:notice] = "Report successfully generated"
-      redirect_to instructor_report_path
+      redirect_to instructor_report_path(@instructor, @report)
     else 
       flash[:alert] = @report.errors_full_messages.join(", ")
-      redirect_to edit_instructor_report_path 
+      redirect_to new_instructor_report_path(@instructor) 
     end 
   end
 
   def show
+    # raise params.inspect
     if logged_in?
-      @report = report.find(params[:id])
+      @instructor = Instructor.find(params[:instructor_id])
+      @report = @instructor.reports.find(params[:id])
     else 
       redirect_to '/login'
     end

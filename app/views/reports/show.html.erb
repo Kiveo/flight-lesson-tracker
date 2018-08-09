@@ -12,10 +12,10 @@
   Flight Hours: <%= @report.flight_hours %>
 </div>
 <ul>
-  <li><p><%= link_to 'View All Reports', reports_path %></p></li>
-  <li><p><%= link_to 'Edit Report', edit_report_path %></p></li>
-  <li><p><%= link_to "Delete", @report, method: :delete, data: { confirm: "Really?" } %></p></li>
-  <li><%= link_to 'Delete Report', [@article, comment], method: :delete, data: { confirm: 'Remove Report?' } %></li> 
+  <li><p><%= link_to 'View All Reports', instructor_reports_path %></p></li>
+  <li><p><%= link_to 'Edit Report', edit_instructor_report_path %></p></li>
+
+  <li><p><%= link_to 'Delete Report', [@instructor, @report], method: :delete, data: { confirm: 'Remove Report?' } %></p></li> 
 </ul>
 <br id="bottom-spacer">
 
