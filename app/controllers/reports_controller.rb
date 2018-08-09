@@ -18,6 +18,11 @@ class ReportsController < ApplicationController
     end 
   end 
  
+  def create
+    @instructor
+    @report = 
+  end
+
   def show
     if logged_in?
       @report = report.find(params[:id])
@@ -28,12 +33,19 @@ class ReportsController < ApplicationController
 
   def destroy
     if logged_in?
-      Report.find(params[:id]).destroy
-      flash[:notice] = "Report successfully removed."
+      @instructor = Instructor.find(params[:instructor_id])
+      @report = @instructor.reports.find(params[:id])
+      @report.destroy
       redirect_to instructor_path(current_user)
     else 
       redirect_to '/login'
     end  
   end
+
+  private 
+
+  def report_params
+    params.require(:report).permit(:title, :flight_hours, :ground_hours)
+  end 
 
 end
