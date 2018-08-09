@@ -1,0 +1,8 @@
+<div class="form-div">
+  <%= form_for(@student) do |f| %>
+    <%= f.label 'Name' %>
+    <%= f.text_field :name, class: 'form-field', required: true %>
+
+    <%= f.submit submit_name, class: 'form-submit text-field' %>
+  <% end %>
+</div>
