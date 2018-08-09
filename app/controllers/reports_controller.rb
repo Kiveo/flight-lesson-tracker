@@ -19,8 +19,6 @@ class ReportsController < ApplicationController
   end 
  
   def create
-    @instructor
-    @report = 
   end
 
   def show
@@ -36,7 +34,8 @@ class ReportsController < ApplicationController
       @instructor = Instructor.find(params[:instructor_id])
       @report = @instructor.reports.find(params[:id])
       @report.destroy
-      redirect_to instructor_path(current_user)
+      flash[:notice] = "Report successfully removed."
+      redirect_to instructor_path(@instructor)
     else 
       redirect_to '/login'
     end  

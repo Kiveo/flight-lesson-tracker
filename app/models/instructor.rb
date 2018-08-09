@@ -1,7 +1,7 @@
 class Instructor < ActiveRecord::Base
   has_many :lessons
   has_many :students, through: :lessons
-  has_many :reports
+  has_many :reports, dependent: :destroy
 
   has_secure_password
 
