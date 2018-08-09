@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
   
   def index
     if logged_in?
-      @reports = Instructor.find_by(params[:instructor_id]).reports
+      @reports = Instructor.find(current_user).reports
     else
       redirect_to '/login'
     end
@@ -33,13 +33,26 @@ class ReportsController < ApplicationController
 
   def show
     # raise params.inspect
-    if logged_in?
+    if logged_in? 
       @instructor = Instructor.find(params[:instructor_id])
       @report = @instructor.reports.find(params[:id])
+      if !current_user.reports.detect{|report| report == @report }
+        flash[:notice] = "Can not view reports that are not yours."
+        redirect_to root_url
+      end 
     else 
       redirect_to '/login'
     end
   end
+
+  def edit
+    if !current_user.reports.detect{|report| report == @report }
+        flash[:notice] = "Can not view reports that are not yours."
+    end 
+  end
+
+  def update
+  end 
 
   def destroy
     if logged_in?
