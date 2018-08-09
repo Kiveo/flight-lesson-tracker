@@ -43,9 +43,9 @@ Relationships:
   <!-- --permissions? (reports per instructor?) -->
 
 5. Project Requirements
-- add spec file
-
 --implement OAuth
+
+- add spec file
 
 -review project requirements
 
