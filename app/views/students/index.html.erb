@@ -3,8 +3,10 @@
 <% @students.each do |student| %>
   <ul>
     <li>Student Name: <%= student.name %></li>
-
     <li>Student Number: <%= student.student_id %></li>
+    <% if logged_in? %>  
+      <li><p><%=link_to 'View/Edit Student?', student_path(student) %></p></li>
+    <% end %>
   </ul>
 <% end %>
     

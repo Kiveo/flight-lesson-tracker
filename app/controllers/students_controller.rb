@@ -37,6 +37,14 @@ class StudentsController < ApplicationController
   end 
 
   def update 
+    find_student
+    if @student.update(student_params)
+      flash[:notice] = "Successfully updated student" 
+      redirect_to student_path(@student) 
+    else 
+      flash[:alert] = @student.errors.full_messages
+      redirect_to edit_student_path
+    end 
   end 
 
   def destroy
