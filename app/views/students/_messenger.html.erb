@@ -1,5 +1,7 @@
 <% if flash[:alert] %>
   <div class='field_with_errors'><%= flash[:alert] %></div>
+<% elsif flash[:notice] %>
+    <p class='important'><%= flash[:notice] %></p>
 <% else %>
   <p class="important">Note: Student ID is issued by administration.</p>
 <% end %>

@@ -1,10 +1,6 @@
 <h1><%= @student.name %>'s Display</h1>
 
-<% if flash[:notice] %>
-  <p class='important'><%= flash[:notice] %></p>
-<% else %>
-  <p class='important'>Student Number may change once an FAA License is acquired.</p>
-<% end %>
+<%= render partial: 'messenger' %>
 
 <div>
   Student Name: <%= @student.name %>
