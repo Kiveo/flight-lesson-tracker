@@ -3,10 +3,10 @@
 <%= render partial: 'messenger' %>
 
 <div>
-  Student Name: <%= @student.name %>
-  <br>
+  Student Name: <%= @student.name %> <br />
   Student Number: <%= @student.student_id %>
 </div>
+
 <ul>
 <li><p><%= link_to 'View All Students', students_path %></p></li>
   <li><p><%= link_to 'Edit Student', edit_student_path %></p></li>
