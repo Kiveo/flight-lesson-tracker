@@ -23,15 +23,15 @@ class ReportsController < ApplicationController
 
   def new
     if logged_in?
-     @instructor = Instructor.find(current_user.id)
-     @report = @instructor.reports.build
+      report_instructor
+      @report = @instructor.reports.build
     else 
       redirect_to '/login'
     end 
   end 
  
   def create
-    @instructor = Instructor.find_by_id(params[:instructor_id])
+    report_instructor
     @report = @instructor.reports.build(report_params)
     if @report.save
       flash[:notice] = "Report successfully generated"
@@ -44,7 +44,7 @@ class ReportsController < ApplicationController
 
   def show
     if logged_in? 
-      @instructor = Instructor.find(params[:instructor_id])
+      report_instructor
       @report = @instructor.reports.find(params[:id])
       if !current_user.reports.detect{|report| report == @report }
         flash[:notice] = "Can not view reports that are not yours."
@@ -56,7 +56,7 @@ class ReportsController < ApplicationController
   end
 
   def edit
-    @instructor = Instructor.find_by_id(params[:instructor_id])
+    report_instructor
     @report = @instructor.reports.find(params[:id])
     if !current_user.reports.detect{|report| report == @report }
         flash[:notice] = "Can not view reports that are not yours."
@@ -64,7 +64,7 @@ class ReportsController < ApplicationController
   end
 
   def update
-    @instructor = Instructor.find_by_id(current_user)
+    report_instructor
     @report = @instructor.reports.find(params[:id])
     if @report.update(report_params)
       flash[:notice] = "Report successfully updated"
@@ -77,7 +77,7 @@ class ReportsController < ApplicationController
 
   def destroy
     if logged_in?
-      @instructor = Instructor.find(params[:instructor_id])
+      report_instructor
       @report = @instructor.reports.find(params[:id])
       @report.destroy
       flash[:notice] = "Report successfully removed."
@@ -93,4 +93,8 @@ class ReportsController < ApplicationController
     params.require(:report).permit(:title, :flight_hours, :ground_hours)
   end 
 
+  def report_instructor
+    @instructor = Instructor.find(params[:instructor_id])
+  end 
+  
 end
