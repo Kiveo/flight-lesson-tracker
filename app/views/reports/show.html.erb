@@ -1,10 +1,6 @@
 <h1><%= @report.title %>: Report Display</h1>
 
-<% if flash[:notice] %>
-  <p class='important'><%= flash[:notice] %></p>
-<% else %>
-  <p class='important'>Report hours will be confirmed by administration.</p>
-<% end %>
+<%= render partial: 'messenger' %>
 
 <div>
   Title: <%= @report.title %>
