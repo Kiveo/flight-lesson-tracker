@@ -11,8 +11,6 @@ class Lesson < ActiveRecord::Base
   #though a student and instructor may be paired multiple times, no lesson should occur at the same time as another lesson. 
   validates :lesson_datetime, uniqueness: true 
 
-  accepts_nested_attributes_for :student, reject_if: :all_blank
-
   scope :recent, -> { order("lessons.lesson_datetime DESC") }
 
 end
