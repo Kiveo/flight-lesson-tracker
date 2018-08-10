@@ -6,16 +6,9 @@ class SessionsController < ApplicationController
   def create  
     #omniauth login
     if auth_hash = request.env["omniauth.auth"] 
-      oauth_name = auth_hash[:info][:name]
-      oauth_cfi = auth_hash[:uid]
-      if @instructor = Instructor.find_by(cfi: oauth_cfi)
-        login_sequence
-        session[:githubber] = true
-      else 
-        @instructor = Instructor.create(name: oauth_name, password: SecureRandom.hex, cfi: oauth_cfi, )
-        login_sequence
-        session[:githubber] = true
-      end  
+      @instructor = Instructor.find_or_create_by_omniauth(auth_hash)
+      login_sequence
+      session[:githubber] = true  
     else #normal login  
       @instructor = Instructor.find_by(cfi: params[:session][:cfi])
       if @instructor && @instructor.authenticate(params[:session][:password])

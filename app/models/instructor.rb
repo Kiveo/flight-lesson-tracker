@@ -13,6 +13,13 @@ class Instructor < ActiveRecord::Base
   validates :password, presence: true
   validates :password, length: { minimum: 2}
 
+  def self.find_or_create_by_omniauth(auth_hash)
+    self.where(cfi: auth_hash[:uid]).first_or_create do |instructor|
+      instructor.password = SecureRandom.hex
+      instructor.name = auth_hash[:info][:name] 
+    end 
+  end 
+
   def students_scheduled
     self.lessons.size
   end
