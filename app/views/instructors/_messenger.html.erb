@@ -1,0 +1,7 @@
+<% if flash[:notice] %>
+  <p class='important'><%= flash[:notice] %></p>
+<% elsif flash[:alert] %>
+  <div class='field_with_errors'><%= flash[:alert] %></div>
+<% else %>
+  <p class="important">Important: FAA CFI number is used for login.</p>
+<% end %>

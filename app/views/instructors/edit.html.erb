@@ -1,9 +1,5 @@
 <h1>Edit Profile</h1>
 
-<% if flash[:alert] %>
-  <%= flash_message(flash[:alert]) %>
-<% else %> 
-<p class='important'><%= important_paragraph %></p>
-<% end %>
+<%= render partial: 'messenger' %>
 
 <%= render partial: 'form', locals: {instructor: @instructor, submit_name: 'Update Instructor'} %>

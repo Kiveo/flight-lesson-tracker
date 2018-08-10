@@ -1,14 +1,9 @@
 <h1><%= @instructor.name %>'s Dashboard</h1>
 
-<% if flash[:notice] %>
-  <p class='important'><%= flash[:notice] %></p>
-<% else %>
-  <p class='important'>If this is not you, please log out.</p>
-<% end %>
+<%= render partial: 'messenger' %>
 
 <div>
-  Registered Name: <%= @instructor.name %>
-  <br>
+  Registered Name: <%= @instructor.name %><br />
   CFI Number: <%= @instructor.cfi %>
 </div>
 
