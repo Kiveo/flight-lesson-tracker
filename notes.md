@@ -1,54 +1,10 @@
 Dev Notes
 OVERVIEW: Flight lesson tracker should be able to allow instructors to plan flight lessons with students.
 
-Models: Instructor, Lesson, Student
-  <!-- a. Instructors have: Name, CFI number  --(#currency? #rating? maybe add later) -->
-  <!-- b. Lessons have: Instructor(id), Student(id), When(datetime?) --(#aircraft) -->
-  <!-- c. Students have: Name --(can add more later#) -->
-
-Relationships:
-  <!-- a. Instructors have many students through lessons, and have many lessons
-  b. Students have many instructors through lessons, and have many lessons
-  c. Lessons belong to both instructors and students -->
-
-1.
-<!-- --Create migrations and tables for the models.    -->
-<!-- --Create models -->
-<!-- --create associations between models -->
-
-<!-- --Drop passwords from students, they're not users! -->
-<!-- --validates :author, presence: true EXAMPLE FOR lessons model -->
-<!-- Students should be created by instructors. -->
-
-<!-- Create report model and have it belong to instructors. -->
-<!-- -Title -Flight_hours -Ground_hours  -->
-<!-- --nest within instructor RESTFUL routes  -->
-<!-- --views should be routed as nested -->
-<!-- -validations for reports -->
-<!-- -restrict based upon individual instructor. (optional, but ideal) -->
-
-<!-- 2.Create Routes and Controllers -->
-<!-- --create controller files -->
-<!-- -routes and basic links (home, login, sign up, logout, stu/instruct, lessons) -->
-<!-- --Student controller and Instructor controller should allow for CRUD ops -->
-<!-- --lesson controller -->
-<!-- !!!ONLY INSTRUCTORS SHOULD SIGNUP/LOGIN!!! -->
-<!-- !!!APP is designed for employee use and possibly student reference. Students are not intended to alter data!
-:Currently, there is no User, only instructors, whom once logged in are in the session[:user_id] as such.  -->
-
-<!-- 3. Basic layout and views -->
-
-<!-- 4. Allow for sessions concerning log in and log out . -->
-  <!-- --create session controller -->
-  <!-- --permissions? (reports per instructor?) -->
-
-5. Project Requirements
---implement OAuth
-
-- add spec file
-
--review project requirements
-
 
 *Extra Features: These are possible features to be added later.
+-more UI friendly css, concerning mobile
 -Instrcutor sign up code to add verification to sign up.
+-Admin that can delete lessons and 'lock' lessons.
+student sign up and associated priviledges.
+-js functionality
