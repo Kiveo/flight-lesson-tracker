@@ -61,6 +61,12 @@ class InstructorsController < ApplicationController
     end  
   end 
 
+  # instructors/monthly_instructor
+
+  def monthly
+    @instructors = Instructor.all 
+  end 
+
   private 
 
   def instructor_params

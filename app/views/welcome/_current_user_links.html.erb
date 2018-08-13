@@ -2,8 +2,13 @@
   <p><%= link_to 'Dashboard', instructor_path(current_user) %></p>
   <p><%= link_to 'Edit Profile', edit_instructor_path(current_user) %></p>
   <p><%= link_to 'Unregister/Delete Profile', current_user, method: :delete, data: {confirm: "Unregister?"} %></p>
+  <p><%= link_to 'Instructor of the Month', monthly_instructor_path %></p>
+
   <br id="bottom-spacer"> 
 <% else %>
   <p><%= link_to 'Log In', '/login' %></p>
   <p><%= link_to 'Register', new_instructor_path %></p>
+  <p><%= link_to 'Instructor of the Month', monthly_instructor_path %></p>
+  
+  <br id = "bottom-spacer">
 <% end %> 

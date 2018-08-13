@@ -1,0 +1,11 @@
+<h1>Instructor of the Month</h1>
+<p class="important">Top of list is the current Instructor of the Month!</p>
+
+<% @instructors.monthly.each do |i| %>
+  <br>
+  Name: <%= i.name %>
+  <br>
+  Students: <%= i.students_scheduled %>
+  <br>
+<% end %>
+<br>

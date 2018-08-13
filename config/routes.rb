@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :students
   resources :lessons, except: :destroy
+
+
+  get '/monthly_instructor', to: 'instructors#monthly'
+
   resources :instructors do 
     resources :reports 
   end 
@@ -15,5 +19,6 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#delete"
 
   get '/auth/github/callback', to: 'sessions#create'
+
 
 end

@@ -24,4 +24,12 @@ class Instructor < ActiveRecord::Base
     self.lessons.size
   end
   
+  def self.monthly
+    # objects.sort_by {|obj| obj.attribute}
+    Instructor.all.sort_by {|instructor| instructor.students_scheduled}.reverse
+  end 
+
+  # scope :most, -> { order("instructors.students_scheduled DESC") }
+
+
 end 
