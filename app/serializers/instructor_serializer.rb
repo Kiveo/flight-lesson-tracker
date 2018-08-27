@@ -1,3 +1,3 @@
 class InstructorSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :cfi
 end
