@@ -2,9 +2,9 @@
 
 <%= render partial: 'messenger' %>
 
-<p>Student:<br> <%= @lesson.student.name %></p>
-<p>Instructor:<br> <%= @lesson.instructor.name %></p>
-<p>Lesson Description:<br> <%= @lesson.description %></p>
-<p>Lesson Date and Time:<br> <%= @lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></p>
+<p id="lessonStudentName">Student:<br> <%= @lesson.student.name %></p>
+<p id="lessonInstructorName">Instructor:<br> <%= @lesson.instructor.name %></p>
+<p id="lessonDescription">Lesson Description:<br> <%= @lesson.description %></p>
+<p id="lessonDatetime">Lesson Date and Time:<br> <%= @lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></p>
 
 <br class="bottom-spacer">
