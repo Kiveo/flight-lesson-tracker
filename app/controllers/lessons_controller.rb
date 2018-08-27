@@ -30,7 +30,9 @@ class LessonsController < ApplicationController
   # end
 
   def show
-  end 
+    @lesson = Lesson.find(params[:id])
+    render json: @lesson, status: 200
+  end
 
   def edit
     if logged_in?
