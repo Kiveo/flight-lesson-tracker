@@ -10,7 +10,7 @@ student sign up and associated priviledges.
 -js functionality*
 
 JS functionality:
-<!-- json backend -->
+<!-- json backend for lesson show -->
 js show view integration for lesson
 js index view
 js powered form and rendering
