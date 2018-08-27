@@ -31,7 +31,10 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-    render json: @lesson, status: 200
+    respond_to do |format|
+      format.html { render :show }
+      format.json {render json: @lesson, status: 200}
+    end
   end
 
   def edit
