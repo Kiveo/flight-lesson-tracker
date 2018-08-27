@@ -7,4 +7,10 @@ OVERVIEW: Flight lesson tracker should be able to allow instructors to plan flig
 -Instrcutor sign up code to add verification to sign up.
 -Admin that can delete lessons and 'lock' lessons.
 student sign up and associated priviledges.
--js functionality
+-js functionality*
+
+JS functionality:
+<!-- json backend -->
+js show view integration for lesson
+js index view
+js powered form and rendering
