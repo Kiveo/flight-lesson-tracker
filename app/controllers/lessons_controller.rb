@@ -2,6 +2,10 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @lessons, status: 200}
+    end 
   end
 
   def new
