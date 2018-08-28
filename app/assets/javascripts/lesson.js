@@ -28,7 +28,7 @@ function nextLesson(url) {
 function Lesson(attributes) {
   console.log("You called Lesson Prototype");
   console.log(attributes);
-  this.id = attributes.id; 
+  this.id = attributes.id;
   this.student = attributes.student.name;
   this.instructor = attributes.instructor.name;
   this.description = attributes.description;
@@ -59,4 +59,14 @@ Lesson.prototype.renderLesson = function() {
   } else {
     $prev.text("End of List");
   }
+}
+
+//renderLesson method for the prototype, when using Id specific <ul id="">
+Lesson.prototype.renderLessonById = function() {
+  let lessonNum = this.id
+  
+  $(`#lessonStudentName${lessonNum}`).text(this.student);
+  $(`#lessonInstructorName${lessonNum}`).text(this.instructor);
+  $(`#lessonDescription${lessonNum}`).text(this.description);
+  $(`#lessonDatetime${lessonNum}`).text(this.lessonDatetime);
 }
