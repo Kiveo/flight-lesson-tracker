@@ -10,10 +10,10 @@ Rails.application.routes.draw do
 
   get '/monthly_instructor', to: 'instructors#monthly'
 
-  resources :instructors do 
-    resources :reports 
-  end 
-  
+  resources :instructors do
+    resources :reports
+  end
+
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#delete"

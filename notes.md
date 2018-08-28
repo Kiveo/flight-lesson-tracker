@@ -12,5 +12,7 @@ student sign up and associated priviledges.
 JS functionality:
 <!-- json backend for lesson show -->
 js show view integration for lesson
+--fix/enable json data to go beyond a single next/previous. (update id of current?)
+
 js index view
 js powered form and rendering

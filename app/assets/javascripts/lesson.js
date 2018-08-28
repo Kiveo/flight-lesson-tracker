@@ -21,6 +21,7 @@ function nextLesson(url) {
   }).done(function(data) {
     var jslesson = new Lesson(data)
     var lessonDisplay = jslesson.renderLesson()
+    renewUrl(url);
   });
 }
 
@@ -41,4 +42,11 @@ Lesson.prototype.renderLesson = function() {
   $('#lessonInstructorName').text(this.instructor);
   $('#lessonDescription').text(this.description);
   $('#lessonDatetime').text(this.lessonDatetime);
+}
+
+function renewUrl(url) {
+  console.log('Call to renew URL');
+  newUrlId = url.replace(".json", "");
+  newUrl = "/lessons/" + newUrlId;
+  history.replaceState(null, null, newUrl);
 }
