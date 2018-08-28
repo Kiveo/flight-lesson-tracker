@@ -5,6 +5,12 @@ $(function() {
     var url = $(this).attr("href")
     nextLesson(url);
   });
+
+  $('#previousLesson').on('click', function(e) {
+    e.preventDefault();
+    var url = $(this).attr("href")
+    nextLesson(url);
+  });
 })
 
 // GET the next lesson from the controller
@@ -26,7 +32,7 @@ function Lesson(attributes) {
   this.instructor = attributes.instructor.name;
   this.description = attributes.description;
   this.lesson_datetime = attributes.lesson_datetime;
-   
+
   console.log(this.student);
   console.log(this.instructor);
   console.log(this.description);

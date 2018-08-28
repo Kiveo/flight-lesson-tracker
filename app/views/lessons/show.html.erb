@@ -13,7 +13,8 @@
   <button class="form-field">End of List</button>
 <% end %>
 <% if @lesson.previous %>
-  <%= link_to "< Previous", @lesson.previous, {id: "previousLesson", class: "form-field"} %>
+  <!-- <%= link_to "< Previous", @lesson.previous, {id: "previousLesson", class: "form-field"} %> -->
+  <a href="<%=@lesson.previous.id%>.json" id="previousLesson" class="form-field">Previous Lesson</a>
 <% else %>
   <button class="form-field">First of List</button>
 <% end %>
