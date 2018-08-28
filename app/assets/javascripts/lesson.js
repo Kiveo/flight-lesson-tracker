@@ -1,13 +1,15 @@
-// // setup listener, after page load
-// $(function() {
-//   $('#nextLesson').on('click', function(e) {
-//     e.preventDefault();
-//     nextLesson();
-//   });
-// })
-//
-// function nextLesson() {
-//   // get show for json from controller
-//   console.log(`clicked the next link`);
-//   // $.get(`/lessons/<%= @lesson.id}%>`);
-// }
+// setup listener, after page load
+$(function() {
+  $('#nextLesson').on('click', function(e) {
+    e.preventDefault();
+    var url = $(this).attr("href")
+    nextLesson(url);
+  });
+})
+
+function nextLesson(url) {
+  console.log(`clicked the next link`);
+  $.get(url, function(data) {
+    console.log(data);
+  })
+}

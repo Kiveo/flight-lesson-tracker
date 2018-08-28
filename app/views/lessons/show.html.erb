@@ -8,14 +8,14 @@
 <p id="lessonDatetime">Lesson Date and Time:<br> <%= @lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></p>
 
 <% if @lesson.next %>
-<%= link_to "Next >", @lesson.next, {id: "nextLesson", class: "form-field"} %>
+  <a href="<%=@lesson.next.id%>.json" id="nextLesson" class="form-field">Next Lesson</a>
 <% else %>
   <button class="form-field">End of List</button>
 <% end %>
 <% if @lesson.previous %>
-   <%= link_to "< Previous", @lesson.previous, {id: "previousLesson", class: "form-field"} %>
+  <%= link_to "< Previous", @lesson.previous, {id: "previousLesson", class: "form-field"} %>
 <% else %>
-   <button class="form-field">First of List</button>
+  <button class="form-field">First of List</button>
 <% end %>
 
 <br class="bottom-spacer">
