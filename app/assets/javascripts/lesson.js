@@ -28,6 +28,7 @@ function nextLesson(url) {
 function Lesson(attributes) {
   console.log("You called Lesson Prototype");
   console.log(attributes);
+  this.id = attributes.id; 
   this.student = attributes.student.name;
   this.instructor = attributes.instructor.name;
   this.description = attributes.description;
