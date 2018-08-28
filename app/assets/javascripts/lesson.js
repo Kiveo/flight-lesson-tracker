@@ -33,28 +33,29 @@ function Lesson(attributes) {
   this.description = attributes.description;
   this.lessonDatetime = attributes.lesson_datetime;
   this.next = attributes.next
+  this.previous = attributes.previous
 }
 
-//add method to the prototype
+//renderLesson method for the prototype
 Lesson.prototype.renderLesson = function() {
-  console.log("Called the render lesson method");
+  let $prev = $('#previousLesson');
+  let $next = $('#nextLesson');
+
   $('#lessonStudentName').text(this.student);
   $('#lessonInstructorName').text(this.instructor);
   $('#lessonDescription').text(this.description);
   $('#lessonDatetime').text(this.lessonDatetime);
-  console.log(this.next.id);
-  // updateLinks(this.next.id);
-  $('#nextLesson').attr('href', `${this.next.id}.json`);
-  $('#nextLesson').text(this.next.id)
-  // $('#nextLesson').attr('href', `${this.next.id}`);
-}
 
-// function updateLinks(this.next.id) {
-//   if (this.next.id > 0) {
-//     $('#nextLesson').attr('href', `${this.next.id}.json`);
-//     $('#nextLesson').text(this.next.id)
-//   } else {
-//     $('#nextLesson').attr('href', '#');
-//     $('#nextLesson').text('End of Listings');
-//   }
-// }
+  if (this.next) {
+    $next.attr('href', `${this.next.id}.json`);
+    $next.text("Next");
+  } else {
+    $next.text("End of List");
+  }
+  if (this.previous) {
+    $prev.attr('href', `${this.previous.id}.json`);
+    $prev.text("Previous");
+  } else {
+    $prev.text("End of List");
+  }
+}

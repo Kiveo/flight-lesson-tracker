@@ -7,22 +7,17 @@
 <p>Lesson Description:<br><span id="lessonDescription"><%= @lesson.description %></span></p>
 <p>Lesson Date and Time:<br><span id="lessonDatetime"><%= @lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></span></p>
 
-<%= @lesson.id %>
 <div id="navLinks">
-  <%= @lesson.id %>
-<%= @lesson %>
   <% if @lesson.next %>
     <a href="<%=@lesson.next.id%>.json" id="nextLesson" class="form-field">Next Lesson</a>
   <% else %>
     <button class="form-field">End of List</button>
   <% end %>
   <% if @lesson.previous %>
-    <!-- <%= link_to "< Previous", @lesson.previous, {id: "previousLesson", class: "form-field"} %> -->
     <a href="<%=@lesson.previous.id%>.json" id="previousLesson" class="form-field">Previous Lesson</a>
   <% else %>
-    <button class="form-field">First of List</button>
+    <a href="#" id="previousLesson" class="form-field">Prev</a>
   <% end %>
-
 </div>
 
 <br class="bottom-spacer">
