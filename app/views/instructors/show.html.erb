@@ -3,7 +3,7 @@
 <%= render partial: 'messenger' %>
 
 <div>
-  Registered Name: <%= @instructor.name %><br />
+  Registered Name: <span id="registeredName"><%= @instructor.name %></span><br />
   CFI Number: <%= @instructor.cfi %>
 </div>
 
@@ -11,8 +11,10 @@
 <p><%= link_to 'Register Student', new_student_path %></p>
 <p><%= link_to 'Create Report', new_instructor_report_path(@instructor) %></p>
 
-<br id="bottom-spacer">
 
 <div id="jsDiv">
+  <p>Listing of Lessons</p>
   <!-- for ajax returns -->
 </div>
+
+<br id="bottom-spacer">

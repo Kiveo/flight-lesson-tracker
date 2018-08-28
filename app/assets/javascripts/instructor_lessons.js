@@ -11,8 +11,12 @@ function Lessons(lesson_array) {
   })
   // for each lesson, create a specific ul and populate ul via prototype method
   instructorLessons.forEach(function(lesson_obj) {
-    renderMultiple(lesson_obj);
-    lesson_obj.renderLessonById();
+    let registeredName = $('#registeredName').text()
+    // only render current instructor's lessons
+    if (lesson_obj.instructor == registeredName ) {
+      renderMultiple(lesson_obj);
+      lesson_obj.renderLessonById();
+    }
   });
 }
 
