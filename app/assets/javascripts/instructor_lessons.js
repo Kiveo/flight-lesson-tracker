@@ -25,6 +25,7 @@ function renderMultiple(lesson_obj) {
   $('#jsDiv').append(`
     <ul id="lesson${lessonNum}">
     <li id="lessonStudentName${lessonNum}">${lessonNum}</li>
+    <li id="lessonStudentId${lessonNum}">${lessonNum}</li>
     <li id="lessonInstructorName${lessonNum}">${lessonNum}</li>
     <li id="lessonDescription${lessonNum}">${lessonNum}</li>
     <li id="lessonDatetime${lessonNum}">${lessonNum}</li>
