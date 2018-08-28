@@ -11,12 +11,12 @@
   <% if @lesson.next %>
     <a href="<%=@lesson.next.id%>.json" id="nextLesson" class="form-field">Next Lesson</a>
   <% else %>
-    <button class="form-field">End of List</button>
+    <a id="nextLesson" class="form-field">End</a>
   <% end %>
   <% if @lesson.previous %>
     <a href="<%=@lesson.previous.id%>.json" id="previousLesson" class="form-field">Previous Lesson</a>
   <% else %>
-    <a href="#" id="previousLesson" class="form-field">Prev</a>
+    <a id="previousLesson" class="form-field">End</a>
   <% end %>
 </div>
 
