@@ -14,11 +14,13 @@ class Lesson < ActiveRecord::Base
   scope :recent, -> { order("lessons.lesson_datetime DESC") }
 
   def previous
-    Lesson.where(["lesson_datetime < ?", self.lesson_datetime]).last
+    prev = Lesson.where(["lesson_datetime < ?", self.lesson_datetime])
+    prev.order(lesson_datetime: :asc).last
   end
 
   def next
-    Lesson.where(["lesson_datetime > ?", self.lesson_datetime]).first
+    nex = Lesson.where(["lesson_datetime > ?", self.lesson_datetime])
+    nex.order(lesson_datetime: :asc).first
   end
 
 end
