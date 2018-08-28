@@ -2,10 +2,10 @@
 
 <%= render partial: 'messenger' %>
 
-<p id="lessonStudentName">Student:<br> <%= @lesson.student.name %></p>
-<p id="lessonInstructorName">Instructor:<br> <%= @lesson.instructor.name %></p>
-<p id="lessonDescription">Lesson Description:<br> <%= @lesson.description %></p>
-<p id="lessonDatetime">Lesson Date and Time:<br> <%= @lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></p>
+<p>Student:<br><span id="lessonStudentName"><%= @lesson.student.name %></span></p>
+<p>Instructor:<br><span id="lessonInstructorName"><%= @lesson.instructor.name %></span></p>
+<p>Lesson Description:<br><span id="lessonDescription"><%= @lesson.description %></span></p>
+<p>Lesson Date and Time:<br><span id="lessonDatetime"><%= @lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></span></p>
 
 <% if @lesson.next %>
   <a href="<%=@lesson.next.id%>.json" id="nextLesson" class="form-field">Next Lesson</a>

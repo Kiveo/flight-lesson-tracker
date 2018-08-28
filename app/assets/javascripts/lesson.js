@@ -20,21 +20,25 @@ function nextLesson(url) {
     console.log("data requested");
   }).done(function(data) {
     var jslesson = new Lesson(data)
-    // var lessonDisplay = jslesson.renderLesson()
+    var lessonDisplay = jslesson.renderLesson()
   });
 }
 
-// create an object from the data: Prototype for the lesson
+// create an object from the data
 function Lesson(attributes) {
   console.log("You called Lesson Prototype");
   console.log(attributes);
   this.student = attributes.student.name;
   this.instructor = attributes.instructor.name;
   this.description = attributes.description;
-  this.lesson_datetime = attributes.lesson_datetime;
+  this.lessonDatetime = attributes.lesson_datetime;
+}
 
-  console.log(this.student);
-  console.log(this.instructor);
-  console.log(this.description);
-  console.log(this.lesson_datetime);
+//add method to the prototype
+Lesson.prototype.renderLesson = function() {
+  console.log("Called the lesson display method");
+  $('#lessonStudentName').text(this.student);
+  $('#lessonInstructorName').text(this.instructor);
+  $('#lessonDescription').text(this.description);
+  $('#lessonDatetime').text(this.lessonDatetime);
 }
