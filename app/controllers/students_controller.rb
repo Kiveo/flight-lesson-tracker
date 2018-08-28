@@ -1,69 +1,72 @@
 class StudentsController < ApplicationController
-  
+
   def index
-    @students = Student.all 
-  end 
+    @students = Student.all
+  end
 
   def new
-    @student = Student.new 
-  end 
+    @student = Student.new
+  end
 
   def create
     if logged_in?
       @student = Student.new(student_params)
-      if @student.save 
+      if @student.save
+        respond_to do |format|
+          format.html {redirect_to @student}
+          format.json {render json: @student, status: 201} #creation succes
+        end
         flash[:notice] = "Successfully registered student"
-        redirect_to student_path(@student)
       else
         flash[:alert] = @student.errors.full_messages.join(", ")
         redirect_to new_student_path
       end
-    else 
+    else
       redirect_to '/login'
-    end  
-  end 
+    end
+  end
 
   def show
     find_student
-  end 
+  end
 
   def edit
     if logged_in?
       find_student
-    else 
+    else
       redirect_to '/login'
-    end 
-  end 
+    end
+  end
 
-  def update 
+  def update
     find_student
     if @student.update(student_params)
-      flash[:notice] = "Successfully updated student" 
-      redirect_to student_path(@student) 
-    else 
+      flash[:notice] = "Successfully updated student"
+      redirect_to student_path(@student)
+    else
       flash[:alert] = @student.errors.full_messages.join(", ")
       redirect_to edit_student_path
-    end 
-  end 
+    end
+  end
 
   def destroy
     if logged_in?
       Student.find(params[:id]).destroy
       flash[:notice] = "Student successfully removed."
       redirect_to root_url
-    else 
+    else
       redirect_to '/login'
-    end  
-  end 
-  
-  private 
+    end
+  end
+
+  private
 
   def student_params
     params.require(:student).permit(:name, :student_id)
-  end 
-  
+  end
+
   def find_student
     @student = Student.find(params[:id])
-  end 
+  end
 
-end 
+end

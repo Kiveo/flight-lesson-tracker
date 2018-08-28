@@ -12,8 +12,14 @@
           'student_id': $('#student_student_id').val()
         }
       }
+
       // use url and data to submit a post request
-      $.post( "/students", $('#new_student').serialize() )
-        
+      var posting = $.post( student_url ,studentData , dostuff(studentData), 'json' )
+
     });
   });
+
+function dostuff(studentData) {
+  console.log("Did stuff");
+  console.log(studentData);
+}

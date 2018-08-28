@@ -15,9 +15,7 @@ $(function() {
 
 // GET the next lesson from the controller
 function nextLesson(url) {
-  console.log(`clicked the next link`);
   $.get(url, function() {
-    console.log("data requested");
   }).done(function(data) {
     var jslesson = new Lesson(data)
     var lessonDisplay = jslesson.renderLesson()
@@ -26,8 +24,6 @@ function nextLesson(url) {
 
 // create an object from the data
 function Lesson(attributes) {
-  console.log("You called Lesson Prototype");
-  // console.log(attributes);
   this.id = attributes.id;
   this.student = attributes.student.name;
   this.studentId = attributes.student.student_id;
