@@ -64,9 +64,10 @@ Lesson.prototype.renderLesson = function() {
 //renderLesson method for the prototype, when using Id specific <ul id="">
 Lesson.prototype.renderLessonById = function() {
   let lessonNum = this.id
-  
-  $(`#lessonStudentName${lessonNum}`).text(this.student);
-  $(`#lessonInstructorName${lessonNum}`).text(this.instructor);
-  $(`#lessonDescription${lessonNum}`).text(this.description);
-  $(`#lessonDatetime${lessonNum}`).text(this.lessonDatetime);
+  let prettyDate = this.lessonDatetime.replace(':00.000Z', "Z").replace('T', ' @ ')
+
+  $(`#lessonStudentName${lessonNum}`).text('Student: ' + this.student);
+  $(`#lessonInstructorName${lessonNum}`).text('Instructor: ' + this.instructor);
+  $(`#lessonDescription${lessonNum}`).text('Description: ' + this.description);
+  $(`#lessonDatetime${lessonNum}`).text('Date: ' + prettyDate);
 }
