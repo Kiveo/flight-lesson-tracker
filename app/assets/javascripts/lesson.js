@@ -18,7 +18,6 @@ function nextLesson(url) {
   $.get(url, function() {
   }).done(function(data) {
     var jslesson = new Lesson(data)
-    // var lessonDisplay = jslesson.renderLesson()
     renderLesson(jslesson);
   });
 }
@@ -39,6 +38,7 @@ Lesson.prototype.prettyDate = function() {
   let prettyDate = this.lessonDatetime.replace(':00.000Z', " Zulu").replace('T', ' @ ');
   return prettyDate;
 }
+
 //renderLesson method for the prototype
 function renderLesson(jsLesson) {
   let $prev = $('#previousLesson');
@@ -69,7 +69,6 @@ function renderLessonById(lesson_obj) {
 
   $(`#lessonStudentName${lessonNum}`).text('Student: ' + lesson_obj.student);
   $(`#lessonStudentId${lessonNum}`).text('School Student ID: ' + lesson_obj.studentId);
-
   $(`#lessonInstructorName${lessonNum}`).text('Instructor: ' + lesson_obj.instructor);
   $(`#lessonDescription${lessonNum}`).text('Description: ' + lesson_obj.description);
   $(`#lessonDatetime${lessonNum}`).text('Date: ' + lesson_obj.prettyDate() );

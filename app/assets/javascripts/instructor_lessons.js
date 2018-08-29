@@ -4,6 +4,7 @@ $(function() {
     let currentLessons = new Lessons(data);
   })
 })
+
 // convert array of data into array of lesson objects
 function Lessons(lesson_array) {
   let instructorLessons = lesson_array.map(function(lesson_info) {
@@ -15,7 +16,6 @@ function Lessons(lesson_array) {
     // only render current instructor's lessons
     if (lesson_obj.instructor == registeredName ) {
       renderMultiple(lesson_obj);
-      // lesson_obj.renderLessonById();
       renderLessonById(lesson_obj);
     }
   });
