@@ -35,6 +35,10 @@ function Lesson(attributes) {
   this.previous = attributes.previous
 }
 
+Lesson.prototype.prettyDate = function() {
+  let prettyDate = this.lessonDatetime.replace(':00.000Z', " Zulu").replace('T', ' @ ');
+  return prettyDate;
+}
 //renderLesson method for the prototype
 function renderLesson(jsLesson) {
   let $prev = $('#previousLesson');
@@ -60,14 +64,13 @@ function renderLesson(jsLesson) {
 }
 
 //renderLesson when using Id specific <ul id="">
-function renderLessonById() {
-  let lessonNum = this.id
-  let prettyDate = this.lessonDatetime.replace(':00.000Z', "Z").replace('T', ' @ ')
+function renderLessonById(lesson_obj) {
+  let lessonNum = lesson_obj.id
 
-  $(`#lessonStudentName${lessonNum}`).text('Student: ' + this.student);
-  $(`#lessonStudentId${lessonNum}`).text('School Student ID: ' + this.studentId);
+  $(`#lessonStudentName${lessonNum}`).text('Student: ' + lesson_obj.student);
+  $(`#lessonStudentId${lessonNum}`).text('School Student ID: ' + lesson_obj.studentId);
 
-  $(`#lessonInstructorName${lessonNum}`).text('Instructor: ' + this.instructor);
-  $(`#lessonDescription${lessonNum}`).text('Description: ' + this.description);
-  $(`#lessonDatetime${lessonNum}`).text('Date: ' + prettyDate);
+  $(`#lessonInstructorName${lessonNum}`).text('Instructor: ' + lesson_obj.instructor);
+  $(`#lessonDescription${lessonNum}`).text('Description: ' + lesson_obj.description);
+  $(`#lessonDatetime${lessonNum}`).text('Date: ' + lesson_obj.prettyDate() );
 }
