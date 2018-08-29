@@ -1,5 +1,5 @@
 // setup listener, after page load
-$(function() {
+document.addEventListener("turbolinks:load", function() {
   $('#nextLesson').on('click', function(e) {
     e.preventDefault();
     var url = $(this).attr("href")
@@ -12,6 +12,19 @@ $(function() {
     nextLesson(url);
   });
 })
+// $(function() {
+//   $('#nextLesson').on('click', function(e) {
+//     e.preventDefault();
+//     var url = $(this).attr("href")
+//     nextLesson(url);
+//   });
+
+//   $('#previousLesson').on('click', function(e) {
+//     e.preventDefault();
+//     var url = $(this).attr("href")
+//     nextLesson(url);
+//   });
+// })
 
 // GET the next lesson from the controller
 function nextLesson(url) {
@@ -23,21 +36,26 @@ function nextLesson(url) {
 }
 
 // create an object from the data
-function Lesson(attributes) {
-  this.id = attributes.id;
-  this.student = attributes.student.name;
-  this.studentId = attributes.student.student_id;
-  this.instructor = attributes.instructor.name;
-  this.description = attributes.description;
-  this.lessonDatetime = attributes.lesson_datetime;
-  this.next = attributes.next
-  this.previous = attributes.previous
+class Lesson {
+  constructor(attributes) {
+    this.id = attributes.id;
+    this.student = attributes.student.name;
+    this.studentId = attributes.student.student_id;
+    this.instructor = attributes.instructor.name;
+    this.description = attributes.description;
+    this.lessonDatetime = attributes.lesson_datetime;
+    this.next = attributes.next
+    this.previous = attributes.previous
+  }
+
+  prettyDate() {
+    let prettyDate = this.lessonDatetime.replace(':00.000Z', " Zulu").replace('T', ' @ ');
+    return prettyDate;
+  }
 }
 
-Lesson.prototype.prettyDate = function() {
-  let prettyDate = this.lessonDatetime.replace(':00.000Z', " Zulu").replace('T', ' @ ');
-  return prettyDate;
-}
+// Lesson.prototype.prettyDate = function() {
+// }
 
 //renderLesson method for the prototype
 function renderLesson(jsLesson) {
