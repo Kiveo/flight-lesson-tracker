@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    @students = Student.all 
+    @students = Student.all
   end
 
   def create

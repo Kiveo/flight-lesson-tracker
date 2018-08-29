@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
     respond_to do |format|
       format.html {render :index}
       format.json {render json: @lessons, status: 200}
-    end 
+    end
   end
 
   def new
@@ -28,10 +28,6 @@ class LessonsController < ApplicationController
       redirect_to new_lesson_path
     end
   end
-  # old show controller pre ajax functionality
-  # def show
-  #   @lesson = Lesson.find(params[:id])
-  # end
 
   def show
     @lesson = Lesson.find(params[:id])
@@ -61,22 +57,6 @@ class LessonsController < ApplicationController
       redirect_to edit_lesson_path
     end
   end
-
-  # To be enabled as a feature in further cycle. Instructors will require admin priviledges to delete lesson
-  # def delete
-  #   if logged_in?
-  #     @lesson = Lesson.find(params[:id])
-  #     if @lesson.destroy
-  #       flash[:notice] = "Lesson Deleted"
-  #       redirect root_url
-  #     else
-  #       flash[:alert] = "Failed to delete."
-  #       redirect_to root_url
-  #     end
-  #   else
-  #     redirect_to '/login'
-  #   end
-  # end
 
   private
 

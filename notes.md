@@ -9,10 +9,22 @@ OVERVIEW: Flight lesson tracker should be able to allow instructors to plan flig
 student sign up and associated priviledges.
 -js functionality*
 
-JS functionality:
-<!-- json backend for lesson show -->
-js show view integration for lesson
---fix/enable json data to go beyond a single next/previous. (update id of current?)
+*# To be enabled as a feature in further cycle. Instructors will require admin priviledges to delete lesson
+# def delete
+#   if logged_in?
+#     @lesson = Lesson.find(params[:id])
+#     if @lesson.destroy
+#       flash[:notice] = "Lesson Deleted"
+#       redirect root_url
+#     else
+#       flash[:alert] = "Failed to delete."
+#       redirect_to root_url
+#     end
+#   else
+#     redirect_to '/login'
+#   end
+# end*
 
-js index view
-js powered form and rendering
+JS functionality:
+Dev Note:
+--Work on known bug concerning pop ups.
