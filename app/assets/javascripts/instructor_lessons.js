@@ -15,7 +15,8 @@ function Lessons(lesson_array) {
     // only render current instructor's lessons
     if (lesson_obj.instructor == registeredName ) {
       renderMultiple(lesson_obj);
-      lesson_obj.renderLessonById();
+      // lesson_obj.renderLessonById();
+      renderLessonById(lesson_obj);
     }
   });
 }

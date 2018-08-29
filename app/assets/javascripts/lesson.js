@@ -18,7 +18,8 @@ function nextLesson(url) {
   $.get(url, function() {
   }).done(function(data) {
     var jslesson = new Lesson(data)
-    var lessonDisplay = jslesson.renderLesson()
+    // var lessonDisplay = jslesson.renderLesson()
+    renderLesson(jslesson);
   });
 }
 
@@ -35,31 +36,31 @@ function Lesson(attributes) {
 }
 
 //renderLesson method for the prototype
-Lesson.prototype.renderLesson = function() {
+function renderLesson(jsLesson) {
   let $prev = $('#previousLesson');
   let $next = $('#nextLesson');
 
-  $('#lessonStudentName').text(this.student);
-  $('#lessonInstructorName').text(this.instructor);
-  $('#lessonDescription').text(this.description);
-  $('#lessonDatetime').text(this.lessonDatetime);
+  $('#lessonStudentName').text(jsLesson.student);
+  $('#lessonInstructorName').text(jsLesson.instructor);
+  $('#lessonDescription').text(jsLesson.description);
+  $('#lessonDatetime').text(jsLesson.lessonDatetime);
 
-  if (this.next) {
-    $next.attr('href', `${this.next.id}.json`);
+  if (jsLesson.next) {
+    $next.attr('href', `${jsLesson.next.id}.json`);
     $next.text("Next");
   } else {
     $next.text("End of List");
   }
-  if (this.previous) {
-    $prev.attr('href', `${this.previous.id}.json`);
+  if (jsLesson.previous) {
+    $prev.attr('href', `${jsLesson.previous.id}.json`);
     $prev.text("Previous");
   } else {
     $prev.text("End of List");
   }
 }
 
-//renderLesson method for the prototype, when using Id specific <ul id="">
-Lesson.prototype.renderLessonById = function() {
+//renderLesson when using Id specific <ul id="">
+function renderLessonById() {
   let lessonNum = this.id
   let prettyDate = this.lessonDatetime.replace(':00.000Z', "Z").replace('T', ' @ ')
 
