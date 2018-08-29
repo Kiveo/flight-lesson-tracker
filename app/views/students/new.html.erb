@@ -4,7 +4,7 @@
 
 <%= render partial: 'form', locals: {student: @student, submit_name: 'Register Student'} %>
 
-<div id="#studentResult">
+<div id="studentResult">
 <ul>
   <% @students.each do |student| %>
     <li><%= student.name %></li>

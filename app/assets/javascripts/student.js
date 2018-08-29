@@ -14,12 +14,28 @@
       }
 
       // use url and data to submit a post request
-      var posting = $.post( student_url ,studentData , dostuff(studentData), 'json' )
+      var posting = $.post( student_url ,studentData , function() {
+        makeStudent(studentData);
+      }, 'json' )
 
     });
   });
 
-function dostuff(studentData) {
-  console.log("Did stuff");
-  console.log(studentData);
+function makeStudent(studentData) {
+  console.log("called to make student");
+  let new_student = new Student(studentData);
+  new_student.renderStudent();
+  console.log("end of makestudent");
+}
+
+function Student(attributes) {
+  console.log("Student Object function called");
+  console.log(attributes.student);
+  this.student = attributes.student.name;
+  this.studentId = attributes.student.student_id;
+}
+
+Student.prototype.renderStudent = function() {
+  console.log("HEEEEEEEEEEEEEELLLLLLLLLLLLLOOOOOOOOO");
+  $('#studentResult').append(`<li>Hello</li>`);
 }
