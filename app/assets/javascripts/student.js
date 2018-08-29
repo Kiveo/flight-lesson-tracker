@@ -12,7 +12,6 @@
           'student_id': $('#student_student_id').val()
         }
       }
-
       // use url and data to submit a post request
       var posting = $.post( student_url ,studentData , function() {
         makeStudent(studentData);
@@ -30,12 +29,15 @@ function Student(attributes) {
   this.studentName = attributes.student.name;
   this.studentId = attributes.student.student_id;
 }
+
 Student.prototype.slogan = function() {
-  // slogan = "Aviator #{self.name}, has joined our team as cadet: #{self.student_id}."
+  // console.log("self?: " + this);
+  let slogan = `Aviator ${this.studentName}, has joined our team as cadet: ${this.studentId}.`;
+  return slogan;
 }
 
 function renderStudent(student_obj) {
-  $('#studentResult').append(`<li>${student_obj.studentName}</li>`);
+  $('#studentResult').append(`<li>${student_obj.slogan()}</li>`);
   // console.log(student_obj.studentName)
   // after appending, reset form fields
 }
