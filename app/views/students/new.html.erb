@@ -5,10 +5,10 @@
 <%= render partial: 'form', locals: {student: @student, submit_name: 'Register Student'} %>
 
 <div>
-<p>Current Student Roster</p>  
-<ul id="studentResult">
-  <% @students.each do |student| %>
-    <li><%= student.name %></li>
-  <% end %>
-</ul>
+  <p>Current Student Roster</p>
+  <ul id="studentResult">
+    <% @students.each do |student| %>
+      <li><%= student.name %></li>
+    <% end %>
+  </ul>
 </div>
