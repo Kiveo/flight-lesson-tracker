@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
   has_many :instructors, through: :lessons
 
   validates :name, presence: true
