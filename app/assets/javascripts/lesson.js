@@ -1,5 +1,5 @@
 // setup listener, after page load
-document.addEventListener("turbolinks:load", function() {
+$(function() {
   $('#nextLesson').on('click', function(e) {
     e.preventDefault();
     var url = $(this).attr("href")
@@ -12,19 +12,6 @@ document.addEventListener("turbolinks:load", function() {
     nextLesson(url);
   });
 })
-// $(function() {
-//   $('#nextLesson').on('click', function(e) {
-//     e.preventDefault();
-//     var url = $(this).attr("href")
-//     nextLesson(url);
-//   });
-
-//   $('#previousLesson').on('click', function(e) {
-//     e.preventDefault();
-//     var url = $(this).attr("href")
-//     nextLesson(url);
-//   });
-// })
 
 // GET the next lesson from the controller
 function nextLesson(url) {
