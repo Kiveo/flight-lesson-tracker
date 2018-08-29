@@ -23,18 +23,19 @@
 
 function makeStudent(studentData) {
   let new_student = new Student(studentData);
-  new_student.renderStudent();
+  renderStudent(new_student);
 }
 
 function Student(attributes) {
-  this.student = attributes.student.name;
+  this.studentName = attributes.student.name;
   this.studentId = attributes.student.student_id;
 }
 Student.prototype.slogan = function() {
   // slogan = "Aviator #{self.name}, has joined our team as cadet: #{self.student_id}."
 }
 
-function renderStudent() {
-  $('#studentResult').append(`<li>Hello</li>`);
-  // after appending, reset form fields 
+function renderStudent(student_obj) {
+  $('#studentResult').append(`<li>${student_obj.studentName}</li>`);
+  // console.log(student_obj.studentName)
+  // after appending, reset form fields
 }
