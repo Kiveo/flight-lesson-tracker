@@ -25,6 +25,10 @@ student sign up and associated priviledges.
 #   end
 # end*
 
-JS functionality:
-Dev Note:
---Work on known bug concerning pop ups.
+JS functionality added via branch:
+--Ajax calls and displays "Next" and "Previous" lessons from a singular lesson view.
+--Ajax calls and displays an instructor specific index of lessons from the Dashboard view.
+--Ajax calls and displays a new student name and message from the new student create page.
+
+Bug Fixes:
+Fixed bug where deleting a student caused erroneous amounts of confirmation pop ups. 
