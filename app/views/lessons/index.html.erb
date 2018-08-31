@@ -16,6 +16,10 @@
   <% end %>
 </div>
 
-<a href="/lessons.json" id="sortLink" class="form-field">Lessons By Reverse Alphabetical Student Names</a>
+<% if logged_in? %>  
+  <a href="/lessons.json" id="sortLink" class="form-field">Lessons By Reverse Alphabetical Student Names</a>
+<% else %>
+  <a href="/login" id="loginLink" class="form-field">Log In</a>  
+<% end %>
 
 <br class="bottom-spacer">

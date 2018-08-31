@@ -38,8 +38,8 @@ function renderSortedLesson(jsLesson) {
     <li>Lesson Instructor: ${jsLesson.instructor}</li>
     <li>Lesson Scheduled: ${jsLesson.indexDate()}</li>
 
-    <li><p><a href="${jsLesson.id}">View Description</a></p></li>  
-    <li><p><a href="${jsLesson.id}/edit">Edit Lesson?</a></p></li>
+    <li><p><a href="/lessons/${jsLesson.id}">View Description</a></p></li>  
+    <li><p><a href="/lessons/${jsLesson.id}/edit">Edit Lesson?</a></p></li>
     </ul>
   `);
 }
