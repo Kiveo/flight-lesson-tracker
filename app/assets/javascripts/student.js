@@ -3,6 +3,7 @@ $(function() {
   $("#new_student").on('submit', function(e){
     e.preventDefault();
     // 1. capture form url
+    // $(this).serialize() similar -confirm documentation
     let student_url = this.action;
     // 2. translate form data
     var studentData = {
