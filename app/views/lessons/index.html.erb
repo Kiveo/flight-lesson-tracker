@@ -1,23 +1,21 @@
 <h1>Lesson Index</h1>
 
-<p class="important">Sorted by most recent date:time</p>
-
-<% @lessons.recent.each do |lesson| %>
-  
-  <ul>
-    <li>Lesson Student: <%= lesson.student.name %></li>
-    <li>Lesson Instructor: <%= lesson.instructor.name %></li>
-    <li>Scheduled: <%= lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></li>
-    <li><p><%= link_to 'View Description', lesson_path(lesson) %></p></li>
-    <% if logged_in? %>  
-     <li><p><%=link_to 'Edit Lesson?', edit_lesson_path(lesson) %></p></li>
-    <% end %>
-  </ul>
-
-<% end %>
+<p class="important" id="sortMessage">Sorted by most recent date:time</p>
+<div id="lessonsDiv">
+  <% @lessons.recent.each do |lesson| %>
+    
+    <ul>
+      <li>Lesson Student: <%= lesson.student.name %></li>
+      <li>Lesson Instructor: <%= lesson.instructor.name %></li>
+      <li>Scheduled: <%= lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></li>
+      <li><p><%= link_to 'View Description', lesson_path(lesson) %></p></li>
+      <% if logged_in? %>  
+      <li><p><%=link_to 'Edit Lesson?', edit_lesson_path(lesson) %></p></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 <a href="/lessons.json" id="sortLink" class="form-field">Lessons By Reverse Alphabetical Student Names</a>
 
-<div id="sortedLessons">
-
-</div>
+<br class="bottom-spacer">

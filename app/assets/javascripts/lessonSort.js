@@ -16,11 +16,32 @@ function sortLessons(url) {
   }).done(function(data) {
     var lessonPlural = data; 
     lessonsByStudent(lessonPlural);
+    renderClean();
     lessonPlural.forEach(function(lesson) {
       var newLesson = new Lesson(lesson);
       renderSortedLesson(newLesson);
     });
+    $('#sortMessage').html('<p class="important" id="sortMessage">Sorted by reverse-alphabetical student names</p>');
+    $('#sortLink').hide();
   });
+}
+
+function renderClean() {
+  $('#lessonsDiv').text('');
+}
+
+function renderSortedLesson(jsLesson) {
+  // <li>Lesson Description: ${jsLesson.description}</li>
+  $('#lessonsDiv').append(`
+    <ul class="ajax-ul">
+    <li>Lesson Student: ${jsLesson.student}</li>
+    <li>Lesson Instructor: ${jsLesson.instructor}</li>
+    <li>Lesson Scheduled: ${jsLesson.indexDate()}</li>
+
+    <li><p><a href="${jsLesson.id}">View Description</a></p></li>  
+    <li><p><a href="${jsLesson.id}/edit">Edit Lesson?</a></p></li>
+    </ul>
+  `);
 }
 
 // sorted by Reverse alphabetical student name

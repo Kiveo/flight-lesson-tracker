@@ -39,6 +39,11 @@ class Lesson {
     let prettyDate = this.lessonDatetime.replace(':00.000Z', " Zulu").replace('T', ' @ ');
     return prettyDate;
   }
+
+  indexDate() {
+    let indexDate = this.lessonDatetime.replace(':00.000Z', " ").replace('T', ' ');
+    return indexDate;
+  }
 }
 
 // Lesson.prototype.prettyDate = function() {
@@ -77,13 +82,4 @@ function renderLessonById(lesson_obj) {
   $(`#lessonInstructorName${lessonNum}`).text('Instructor: ' + lesson_obj.instructor);
   $(`#lessonDescription${lessonNum}`).text('Description: ' + lesson_obj.description);
   $(`#lessonDatetime${lessonNum}`).text('Date: ' + lesson_obj.prettyDate() );
-}
-
-function renderSortedLesson(jsLesson) {
-
-
-  $('#sortedLessons').append(`<p>${jsLesson.student}</p>`);
-  $('#sortedLessons').append(`<p>${jsLesson.instructor}</p>`);
-  $('#sortedLessons').append(`<p>${jsLesson.description}</p>`);
-  $('#sortedLessons').append(`<p>${jsLesson.lessonDatetime}</p>`);
 }
