@@ -7,7 +7,7 @@ gem 'rails', '4.2.10'
 # # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # CONVERSION FOR HEROKU deployment
-gem 'pg', '~> 0.15'
+gem 'pg', '~> 0.20'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
