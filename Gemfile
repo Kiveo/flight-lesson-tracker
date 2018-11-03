@@ -31,8 +31,8 @@ gem 'omniauth-github'
 # fix a vulnerability potential with loofah specification
 gem "loofah", ">= 2.2.3"
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# windows compat? fixing error via gem required tzinfo
+gem 'tzinfo-data'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
