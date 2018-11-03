@@ -1,4 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   # provider :developer unless Rails.env.production?
-  provider :github, 'useyourkey', 'useyourpasskey'
+  provider :github, ENV['KEY'], ENV['SECRET']
 end
