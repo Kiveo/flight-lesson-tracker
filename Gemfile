@@ -28,8 +28,8 @@ gem 'bcrypt'
 gem 'omniauth'
 gem 'omniauth-github'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# fix a vulnerability potential with loofah specification
+gem "loofah", ">= 2.2.3"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
