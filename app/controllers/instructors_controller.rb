@@ -52,6 +52,9 @@ class InstructorsController < ApplicationController
 
   def destroy
     if logged_in?
+      if Lesson.find_by_instructor_id(params[:id]) 
+        Lesson.find_by_instructor_id(params[:id]).destroy
+      end 
       Instructor.find(params[:id]).destroy
       flash[:notice] = "Successfully Unregistered."
       session.delete :user_id
