@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :students
-  resources :lessons, except: :destroy
+  resources :lessons
 
 
   get '/monthly_instructor', to: 'instructors#monthly'

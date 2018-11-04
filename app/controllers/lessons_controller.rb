@@ -51,20 +51,20 @@ class LessonsController < ApplicationController
   end 
 
   # To be enabled as a feature in further cycle. Instructors will require admin priviledges to delete lesson
-  # def delete
-  #   if logged_in?
-  #     @lesson = Lesson.find(params[:id])
-  #     if @lesson.destroy
-  #       flash[:notice] = "Lesson Deleted"
-  #       redirect root_url 
-  #     else 
-  #       flash[:alert] = "Failed to delete."
-  #       redirect_to root_url 
-  #     end 
-  #   else 
-  #     redirect_to '/login'
-  #   end
-  # end 
+  def destroy
+    if logged_in?
+      @lesson = Lesson.find(params[:id])
+      if @lesson.destroy
+        flash[:notice] = "Lesson Deleted"
+        redirect_to lessons_url 
+      else 
+        flash[:alert] = "Failed to delete."
+        redirect_to lessons_url 
+      end 
+    else 
+      redirect_to '/login'
+    end
+  end 
   
   private 
 

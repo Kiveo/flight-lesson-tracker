@@ -27,6 +27,14 @@ a,a:visited {
   border-radius: 10px;
 }
 
+.wrapper .caution {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.caution:hover {
+  font-weight: bold;
+  color: darkred;
+}
 .wrapper a:hover {
   background-color: #08a;
   border-radius: 10px;

@@ -10,7 +10,8 @@
     <li>Scheduled: <%= lesson.lesson_datetime.strftime('%e %B %Y %H:%M') %></li>
     <li><p><%= link_to 'View Description', lesson_path(lesson) %></p></li>
     <% if logged_in? %>  
-     <li><p><%=link_to 'Edit Lesson?', edit_lesson_path(lesson) %></p></li>
+     <li><p><%=link_to 'Edit Lesson', edit_lesson_path(lesson) %></p></li>
+     <li><p><%= link_to 'Delete', lesson, method: :delete, data: {confirm: "Delete Lesson?"}, class: "caution" %></p></li>
     <% end %>
   </ul>
 
