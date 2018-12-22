@@ -41,7 +41,7 @@ gem "loofah", ">= 2.2.3"
 gem 'tzinfo-data'
 
 # fix vulnerability in activejob
-gem "activejob", ">= 4.2.11"
+# gem "activejob", ">= 4.2.11"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
